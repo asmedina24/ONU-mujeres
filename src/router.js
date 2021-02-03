@@ -5,6 +5,7 @@ import { wall } from './view/templateWall.js';
 import {Comunidades} from './view/templateComunidades.js'
 import {Chat} from './view/templateChat.js'
 import login from './functions/login.js';
+
 // import { message } from './view/templateMessage.js'
 
 const showtemplate = (hash) => {
@@ -42,13 +43,15 @@ const showtemplate = (hash) => {
 
     switch (hash) {
         case '':
-        
+            containerRoot.innerHTML =''; 
             containerRoot.appendChild(home());
             break;
         case '#/home':
+            containerRoot.innerHTML =''; 
             containerRoot.appendChild(home());
             break;
         case '#/profile':
+            containerRoot.innerHTML =''; 
             containerRoot.appendChild(profile());
             break;
         case '#/logIn':
@@ -86,10 +89,8 @@ export const changeroute = (hash) => {
 };
 
 export const showTabs = (tab, div) => {
-
   const containerRoot = div
   console.log("showTabs", containerRoot);
-  //   const containerRoot2 = document.getElementById('root1');
   containerRoot.innerHTML = "";
   switch (tab) {
     case "":

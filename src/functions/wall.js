@@ -29,3 +29,9 @@ function closeSubmenu(menu,e) {
     menu.querySelector(".submenu-active").classList.remove("submenu-active");
   }
 }
+
+// /*Buscador*/
+// function search (pokemon, text) {
+//   const search = pokemon.filter(pokemon => pokemon.name.includes(text));
+//   return search
+// };
