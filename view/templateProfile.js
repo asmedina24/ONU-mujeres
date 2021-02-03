@@ -1,7 +1,9 @@
+
+// <----------Contenido del Editar Perfil--------->
 export const profile = () => {
     const divHome = document.createElement('div');
-    const viewHome = `  
-  <p> crear y editar Profile </p>
+    const viewHome =  `  
+      <p> Crear perfil </p>
       `;
     divHome.innerHTML = viewHome;
     return divHome;
