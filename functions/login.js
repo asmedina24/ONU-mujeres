@@ -1,4 +1,27 @@
 const login = {
+  loginMail: (email, pass) =>{
+    firebase.auth().signInWithEmailAndPassword(email, pass)
+  .then((user) => {
+    // Signed in
+    // const mensaje = document.querySelector('#menssageError');
+    // mensaje.innerHTML = `
+    // <div class="mensaje-error">
+      
+    // </div>`;
+    // ...
+    window.location = ('#/wall');
+  })
+  .catch((error) => {
+    const formLogin = document.getElementById('formLogin');
+    formLogin.reset();
+    const mensaje = document.querySelector('#menssageError');
+    mensaje.innerHTML = `
+    <div class="mensaje-error">
+      <p>email o contraseña invalida</p>
+    </div>`;
+
+  });
+  },  
   ocultarPassword: () =>{
     let a=document.querySelector("#pwd");
     let b=document.querySelector("#eye");
@@ -11,33 +34,15 @@ const login = {
     b.src="../Imagenes/eye-close.png";
     } 
   },
-  facebook: () =>{
-   let provider = new firebase.auth.FacebookAuthProvider(); 
-       provider.addScope('public_profile' ); 
-       firebase.auth().signInWithPopup(provider)
-            .then((result) => {
-               /** @type {firebase.auth.OAuthCredential} */
-               var credential = result.credential;
+  cerrarSesion: () => {
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        window.location = ('#/logIn');
 
-               // The signed-in user info.
-               var user = result.user;
-
-               // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-               var accessToken = credential.accessToken;
-
-               // ...
-           })
-           .catch((error) => {
-               // Handle Errors here.
-               var errorCode = error.code;
-               var errorMessage = error.message;
-               // The email of the user's account used.
-               var email = error.email;
-               // The firebase.auth.AuthCredential type that was used.
-               var credential = error.credential;
-
-               // ...
-           });
-  },   
+        console.log("cerro sesion bien");
+      }).catch((error) => {
+        // An error happened.
+      });
+  },
 };
 export default login;

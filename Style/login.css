@@ -1,4 +1,19 @@
 @media (min-width : 320px) and (max-width: 768px) {
+ .div-login{
+   margin-top: 34px;
+   position: relative;
+ }
+ #menssageError{
+   position: relative;
+   top: 302px;
+   text-align: center;
+   font-size: 12px;
+   color: orangered;
+ }
+ .mensaje-error{
+   margin: 5px;
+
+ }
  #btnEye{
    position: absolute;
    appearance: none;
