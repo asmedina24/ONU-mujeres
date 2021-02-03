@@ -2,8 +2,9 @@ import { logIn } from './view/templateLogIn.js';
 import { home } from './view/templateHome.js';
 import { profile } from './view/templateProfile.js';
 import { wall } from './view/templateWall.js';
-import { Comunidades } from './view/templateComunidades.js'
-import { Chat } from './view/templateChat.js'
+import {Comunidades} from './view/templateComunidades.js'
+import {Chat} from './view/templateChat.js'
+import login from './functions/login.js';
 // import { message } from './view/templateMessage.js'
 
 const showtemplate = (hash) => {
@@ -25,12 +26,20 @@ const showtemplate = (hash) => {
             <li><a href="#/logIn">login!</a></li>
             <li><a href="#/profile">perfil.</a></li>
             <li><a href="#/wall">wall!</a></li>
+            <li id="cerrarSesion">cerrar</li>
            
         </ul>
     </nav>
    <p class="titulo">Tu Oportunidad</p>
 </header>  
     `;
+
+    const cerrar = document.getElementById('cerrarSesion');
+    cerrar.addEventListener("click", () => {
+        login.cerrarSesion();
+
+    });
+
     switch (hash) {
         case '':
             containerRoot.innerHTML =''; 
