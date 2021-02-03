@@ -6,8 +6,8 @@
    background-color: transparent !important;
    border-color: white;
    outline: none;
-   top: 61px;
-   right: 0px;
+   top: 88px;
+   right: 5px;
  }
  #eye{
    width: 20px;
@@ -17,6 +17,9 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
+
+ }
+ .header-login-p{
    font-family: Roboto;
    font-style: normal;
    font-weight: 500;
@@ -34,6 +37,7 @@
  }
  #logoLogin{
    position: absolute;
+   top: 100px;
  }
  #formLogin{
    position: absolute;
@@ -47,9 +51,100 @@
    border-color: white;
    outline: none;
  }
+ #imgLogin:active , #imgLogin:hover{
+   color: blue;
+   border-color: blue;
+   box-shadow: 6px 4px 7px grey;
+}
  .footer-login{
    display: flex;
    justify-content: center;
-   margin-top: 238px;
+   margin-top: 319px;
  }
+ .footer-login-p{
+   margin-top: 79px;
+   font-family: Roboto;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 16px;
+   letter-spacing: 0.4px;
+   color: #979797;
+ }
+ .masked{
+   height: 27px;
+   position: absolute;
+   border: none;
+   top: 28px;
+   left: 10px;
+   width: 100%;
+   outline: none;
+   max-width: 254px;
+ }
+ .masked2{
+   height: 27px;
+   position: absolute;
+   border: none;
+   top: 97px;
+   left: 10px;
+   width: 81%;
+   outline: none;
+   max-width: 254px;
+ }
+.label-form{
+   position: absolute;
+   top: 9px;
+   z-index: 100;
+   background: white;
+   left: 10px;
+   padding-left: 11px;
+   padding-right: 11px;
+ }
+
+.label-form2{
+   position: absolute;
+   top: 81px;
+   z-index: 100;
+   background: white;
+   left: 10px;
+   padding-left: 11px;
+   padding-right: 11px;
+}
+.label-login{
+   border: 1px solid  #979797;
+   height: 40px;
+   width: 100%;
+   max-width: 280px;
+   margin-top: 2px;
+   margin-bottom: 12px;
+}
+.label-login:active , .label-login:hover{
+   color: blue;
+   border-color: blue;
+   box-shadow: 0 3px 6px blue;
+}
+#formLogin{
+   position: absolute;
+   top: 213px;
+   width: 279px;
+   text-align: center;
+   font-family: Roboto;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 16px;
+   letter-spacing: 0.4px;
+}
+.input-Pwd{
+   border: 1px solid #979797;
+   height: 40px;
+   width: 100%;
+   max-width: 280px;
+   margin-top: 2px;
+}
+.input-Pwd:active , .input-Pwd:hover{
+   color: blue;
+   border-color: blue;
+   box-shadow: 0 3px 6px blue;
+}
 }

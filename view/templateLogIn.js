@@ -4,7 +4,7 @@ export const logIn = () => {
     const divHome = document.createElement('div');
     const viewHome = ` 
     <div class="header-login"> 
-    <p> Iniciar Sesión </p> 
+    <p class="header-login-p"> Iniciar Sesión </p> 
     <img src="../Imagenes/spain.png" id="bandera" alt="eye">
     </div>
     <div class = "body-login">
@@ -12,10 +12,13 @@ export const logIn = () => {
       <div id="menssage_error">
       </div>
       <form action="" id= "formLogin">
-          <label class="label-form">Email</label>
-            <input type="mail" class="inputLogin" id="mailLogin" alt="" value="" required>
+           <div class="label-login">
+              <label for="mailLogin" class="label-form">Email</label> 
+              <input type="mail" class="masked" id="mailLogin" alt="" value="" required>
+           </div>
             <div class="input-Pwd">
-              <input type="password" placeholder="Password" id="pwd" class="masked" name="password">
+              <label for="pwd" class="label-form2">Contraseña</label>
+              <input type="password" id="pwd" class="masked2" name="password">
               <button type="button" id="btnEye">
                   <img src="../Imagenes/eye-close.png" id="eye" alt="eye">
               </button>
@@ -26,6 +29,7 @@ export const logIn = () => {
         <button type="button" id="btnLogin">
             <img src="../Imagenes/btnLogin.png" id="imgLogin" alt="eye">
         </button>
+        <p class="footer-login-p">Al continuar acepta términos y condiciones </p>
     </div>
       `;
     divHome.innerHTML = viewHome;
