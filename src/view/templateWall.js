@@ -1,3 +1,4 @@
+import { booleanTypeAnnotation } from "@babel/types";
 import { showTabs } from "../router.js";
 export const wall = () => {
   const divWall = document.createElement("div");
@@ -16,15 +17,19 @@ export const wall = () => {
       <div class="input-group">
         <div class="form-outline">
          <input type="search" placeholder="   Buscar" id="search"/>
+         <button id="boton"> BUscar</button>
           <label><i class="fas fa-search"></i></label>
       </div>
      </div>
 
 
      <div id="canales">
-     <div>#canales 1 </div>
-     <div>#canales 2 </div>
-     <div>#canales 3 </div>
+     <div>
+     <p> Estes es uno de los canales mas importantes para la busqueda de empleo</p> </div>
+          <div>
+          <p> canales mas importantes para la busqueda de empleo</p> </div>
+     <div>
+     <p> Estes es uno de los canales mas importantes para la busqueda de empleo</p> </div>
      </div>
  
       `;
@@ -47,7 +52,12 @@ export const wall = () => {
     return divWall;
 };
 
-  const search = document.querySelector("#search");
-  console.log(search);
+  // const search = document.querySelector("#search");
+  // const buttonSearch = document.querySelector("#")
+  // console.log(search);
 
+  // const filtar = () =>{
+  //   console.log(search.value)
+  // } 
+  // boton.addEventListener('click', filtar)
   
