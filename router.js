@@ -7,7 +7,7 @@ import { wall } from './view/templateWall.js';
 const showtemplate = (hash) => {
     const containerRoot = document.getElementById('root');
     //   const containerRoot2 = document.getElementById('root1');
-    containerRoot.innerHTML = home();
+    containerRoot.innerHTML = '';
     switch (hash) {
         case '':
             containerRoot.appendChild(home());
