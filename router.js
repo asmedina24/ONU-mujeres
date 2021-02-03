@@ -2,6 +2,7 @@ import { logIn } from './view/templateLogIn.js';
 import { home } from './view/templateHome.js';
 import { profile } from './view/templateProfile.js';
 import { wall } from './view/templateWall.js';
+import { editProfile }  from './view/templateEditProfile.js'
 // import { message } from './view/templateMessage.js'
 
 const showtemplate = (hash) => {
@@ -18,6 +19,9 @@ const showtemplate = (hash) => {
         case '#/profile':
             containerRoot.appendChild(profile());
             break;
+        case '#/editProfile':
+            containerRoot.appendChild(editProfile());
+            break;    
         case '#/logIn':
             containerRoot.appendChild(logIn());
             break;
@@ -38,6 +42,8 @@ export const changeroute = (hash) => {
     } if (hash === '#/home') {
         return showtemplate(hash);
     } if (hash === '#/profile') {
+        return showtemplate(hash);
+    } if (hash === '#/editProfile') {
         return showtemplate(hash);
     } if (hash === '#/wall') {
         return showtemplate(hash);
