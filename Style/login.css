@@ -17,6 +17,8 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
+   margin-left: 10px;
+   margin-right: 10px;
 
  }
  .header-login-p{
@@ -27,7 +29,6 @@
    line-height: 24px;
    letter-spacing: 0.15px;
    color: #000000;
-   margin: 14px;
  }
  .body-login{
    display: flex;
