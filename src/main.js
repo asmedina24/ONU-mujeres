@@ -1,4 +1,4 @@
-import { home } from './view/templateHome.js';
+
 import { changeroute } from './router.js';
 
 const init = () => {
@@ -14,4 +14,4 @@ const init = () => {
   }
 };
 
-window.addEventListener("load", init()); // cuando cargue ñla pag, ejecuta función.
+window.addEventListener("load", init()); // cuando cargue la pag, ejecuta función.
