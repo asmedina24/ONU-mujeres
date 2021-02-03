@@ -1,5 +1,3 @@
-import home from "../functions/Home.js";
-
 export const home = () => {
   const divHome = document.createElement('div');
   const viewHome = `  
@@ -14,10 +12,10 @@ export const home = () => {
       <br>
   </ul> 
   `;
- };
   divHome.innerHTML = viewHome;
   return divHome;
-  
+};
+
   // export const Home = () => {
   // const homeDiv = document.createElement('div');
   //   const home1 = ` 
