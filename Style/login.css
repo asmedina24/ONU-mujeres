@@ -122,7 +122,6 @@
 .label-login:active , .label-login:hover{
    color: blue;
    border-color: blue;
-   box-shadow: 0 3px 6px blue;
 }
 #formLogin{
    position: absolute;
@@ -146,6 +145,5 @@
 .input-Pwd:active , .input-Pwd:hover{
    color: blue;
    border-color: blue;
-   box-shadow: 0 3px 6px blue;
 }
 }
