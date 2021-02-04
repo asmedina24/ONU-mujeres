@@ -93,12 +93,14 @@ export const showTabs = (tab, div) => {
   containerRoot.innerHTML = "";
   switch (tab) {
     case "":
-      containerRoot.appendChild(Comunidades());
+        containerRoot.appendChild(Comunidades());
       break;
     case "Comunidades":
+      containerRoot.innerHTML = ""; 
       containerRoot.appendChild(Comunidades());
       break;
     case "Chat":
+      containerRoot.innerHTML = "";  
       containerRoot.appendChild(Chat());
       break;
     default:

@@ -2,6 +2,8 @@ import { showTabs } from "../router.js";
 export const wall = () => {
   const divWall = document.createElement("div");
   const viewWall = `  
+  
+     </div>
     <div class="selection">
       <div class="button-selection" id="btnComunidad">
         <p>comunidad</p>
@@ -13,13 +15,7 @@ export const wall = () => {
         <div class="Tab" id="tabs">
             </div>
 
-      <div class="input-group">
-        <div class="form-outline">
-         <input type="search" placeholder=" Buscar" id='search'/>
-         <button id="boton"> BUscar</button>
-          <label><i class="fas fa-search"></i></label>
-      </div>
-     </div>
+      
 
        `;
   divWall.innerHTML = viewWall;
