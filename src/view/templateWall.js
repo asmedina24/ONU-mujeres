@@ -15,19 +15,13 @@ export const wall = () => {
 
       <div class="input-group">
         <div class="form-outline">
-         <input type="search" placeholder="   Buscar" id="search"/>
+         <input type="search" placeholder=" Buscar" id='search'/>
+         <button id="boton"> BUscar</button>
           <label><i class="fas fa-search"></i></label>
       </div>
      </div>
 
-
-     <div id="canales">
-     <div>#canales 1 </div>
-     <div>#canales 2 </div>
-     <div>#canales 3 </div>
-     </div>
- 
-      `;
+       `;
   divWall.innerHTML = viewWall;
   const divTabs = divWall.querySelector("#tabs");
   showTabs("", divTabs);
@@ -36,18 +30,14 @@ export const wall = () => {
   const items = divWall.querySelectorAll(".item");
   const btnComunidad = divWall.querySelector("#btnComunidad");
   const btnChat = divWall.querySelector("#btnChat");
-  
-
+    
   /* Event Listeners */
   // toggle.addEventListener("click", toggleMenu(menu,toggle), false);
   btnComunidad.addEventListener("click",() => showTabs("Comunidades", divTabs),
     false );
 
   btnChat.addEventListener("click", () => showTabs("Chat", divTabs), false);
-    return divWall;
-};
-
-  const search = document.querySelector("#search");
-  console.log(search);
-
   
+  return divWall;
+
+};
