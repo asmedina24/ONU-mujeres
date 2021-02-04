@@ -1,0 +1,90 @@
+
+@media (min-width : 320px) and (max-width: 768px) {
+  .profile-data-user {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-profile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 321px;
+  }
+  
+  #profileForm {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile {
+    margin: 6px 0px 6px;
+  }
+  
+  .profile-div{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* profile  */
+  .createProfile {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #000000;
+
+  }
+  
+  .profile-photo {
+    justify-content: center;
+    display: flex;
+    margin: 20px;
+  }
+
+  .img-post {
+    width: 170px;
+    height: 170px;
+    border-radius: 150px;
+  }
+
+  .name-profile {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 36px;
+    color: rgba(0, 0, 0, 0.87);
+    margin-left: 26px;
+    margin-bottom: 10px;
+  }
+
+  .information-profile {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: rgba(0, 0, 0, 0.87);
+    margin-left: 26px;
+  }
+
+
+  .button-edit-profile {
+    background: #4d8fc2;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FEFEFE;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+  }
+/* Ultima llave del responsive  */
+} 
