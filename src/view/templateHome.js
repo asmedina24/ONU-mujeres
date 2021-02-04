@@ -13,7 +13,6 @@ export const home = () => {
   </ul> 
   <div class="header-home1">
         <img src="../Imagenes/Tu-oportunidad-logo.png" class="logoHome"  alt="Logo">
-        <img src="../Imagenes/spain.png" id="flag" alt="flag">
   </div>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
