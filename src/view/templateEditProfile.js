@@ -16,7 +16,10 @@ export const editProfile = () => {
         <div id="uploadedImage">
         </div>
         <input type="file" id="myfile" name="myfile" accept="image/png, .jpeg, .jpg, image/gif" />
-        <input type="text" placeholder="Nombre" class="profile" id="nameProfile" />
+        <div class="label-profile-name">
+          <label for="nameProfile" class="label-name">Nombre</label> 
+          <input type="text" class="profile" id="nameProfile" required/>
+        </div>
         <input type="text" placeholder="Apellido" class="profile" id="fullNameProfile">
         <input type="text" placeholder="Ciudad" class="profile" id="cityProfile"/>
         <input type="text" placeholder="Instagram" class="profile" id="instagramProfile"/>
