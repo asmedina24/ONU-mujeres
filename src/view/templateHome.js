@@ -1,17 +1,11 @@
 export const home = () => {
   const divHome = document.createElement('div');
   const viewHome = `  
-  <ul> 
-      <a href="#/home">Home</a>
-      <br>
-      <a href="#/logIn">Login y registro </a>
-      <br>
-      <a href="#/profile">Profile</a>
+  <ul>
       <br>
       <a href="#/wall">Muro</a>
-      <br>
   </ul> 
-  <div class="header-home1">
+  <div class="header-home">
         <img src="../Imagenes/Tu-oportunidad-logo.png" class="logoHome"  alt="Logo">
   </div>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -36,7 +30,9 @@ export const home = () => {
             <button type="button" id="btnStart">COMENZAR</button>
           </div>
         </div>
-
+        <ul>
+          <a href="#/logIn">Login y registro</a>
+          </ul> 
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -51,7 +47,3 @@ export const home = () => {
   return divHome;
 };
 
- 
-//14 a 17 header
-
-   
