@@ -9,9 +9,9 @@ export const Comunidades = () => {
       <label><i class="fas fa-search"></i></label>
     </div>
   </div>
-  <div class="container">
+ 
     <div id="bodyComunidades"></div>
-  </div>
+ 
     <!-- Default dropup button -->
     <div class="dropup">
       <button type="button" class="btn fabComunity " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
