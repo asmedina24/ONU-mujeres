@@ -4,6 +4,7 @@ import { addCollectionProfile, editProfileFirebase } from '../functions/profile.
 export const editProfile = () => {
   const currentUserData = firebase.auth().currentUser; // Datos del Usuario que accedió
   const emailData = currentUserData.email; // Email del usuario que accedio
+  const idData = currentUserData.uid;  // ID del usuario que accedio
 
   const divEditProfile = document.createElement('div');
   const viewProfile = /*html*/ `  
@@ -126,7 +127,7 @@ export const editProfile = () => {
     if(!querySnapshot.empty){
       editProfileFirebase(id, emailData, nameProfile, imgb64, fullNameProfile, cityProfile, instagramProfile, facebookProfile, aboutMeProfile, occupationProfile); //Edita el perfil en firebase
     } else {
-       addCollectionProfile(emailData, nameProfile, imgb64, fullNameProfile, cityProfile, instagramProfile, facebookProfile, aboutMeProfile, occupationProfile); //  Agrega el perfil a firebase
+       addCollectionProfile(idData, emailData, nameProfile, imgb64, fullNameProfile, cityProfile, instagramProfile, facebookProfile, aboutMeProfile, occupationProfile); //  Agrega el perfil a firebase
     }
 
     window.location = ('#/profile');

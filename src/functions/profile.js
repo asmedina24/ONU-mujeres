@@ -1,5 +1,5 @@
 // Funcion que guarda el perfil del usuario en firebase
-export const addCollectionProfile = (emailData, nameUser, photoUser, fullNameUser, cityUser, instagramUser, facebookUser, aboutMeUser, occupationUser) => {
+export const addCollectionProfile = (idData, emailData, nameUser, photoUser, fullNameUser, cityUser, instagramUser, facebookUser, aboutMeUser, occupationUser) => {
     firebase.firestore().collection('perfil').add({
       email: emailData,
       name: nameUser,
@@ -10,6 +10,7 @@ export const addCollectionProfile = (emailData, nameUser, photoUser, fullNameUse
       instagram: instagramUser,
       facebook: facebookUser,
       aboutMe: aboutMeUser,
+      uid: idData,
     }).then(() => {
       alert('perfil listo');
     }).catch(() => {

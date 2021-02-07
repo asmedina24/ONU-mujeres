@@ -2,7 +2,7 @@
 export const profile = () => {
   const currentUserData = firebase.auth().currentUser; // Datos del Usuario que accedió
   const emailData = currentUserData.email; // Email del usuario que accedio
-  
+
   const divProfile = document.createElement('div');
   const viewProfile = /*html*/ ` 
     <div class="profile-div"> 
