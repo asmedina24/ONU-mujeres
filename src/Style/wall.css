@@ -67,7 +67,7 @@ nav.principal {
     width: 15rem;
     background-color: #22335E;
     transform: translateX(-25rem);
-    transition: 1s all;
+    transition: 1s all;z-index: 100;
 }
 /* Estilos sencillos para decorar los links */
 nav.principal ul {
@@ -88,11 +88,20 @@ nav.principal a:hover {
 header {
     display: flex;
     background-color: #22335E;
-    height: 50px;}
+    height: 50px;
+padding-left: 10px;}
 .titulo{
     color: white;
     font-size: 20px;
     margin-top: 10px;
+}
+.tituloCanal{
+    color: white;
+    font-size: 15px;
+    margin-top: 13px;
+    padding-left:2px ;
+
+
 }
 .form-outline{
     background-color: #E0E0E0;
@@ -127,6 +136,15 @@ header {
     color: #FEFEFE;
 
 }
+.fabComunity {
+    border-radius: 30px;
+    position: fixed;
+    left: 261px;
+    bottom: 5%;
+    background-color: #009DDC;
+    color: #FEFEFE;
+    width: 40px;
+}
 #formulario{
     display: flex;
     position: absolute;
@@ -149,4 +167,30 @@ header {
 }
 
 }
+
+.canal .card-body {  
+  overflow-y: scroll;
+  height: 80vh;
+  -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0;
+
+}
+#formularioCrear{
+    
+ 
+    margin-top: 30px;
+    
+}
+.dropdown-menu.show {
+    display: block;
+    bottom: 10;
+    /* bottom: 30px; */
+    top: 75px !important;
+    left: -5px;
+    will-change: transform;
+    bottom: -165px;
+}
+
 
