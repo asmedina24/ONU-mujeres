@@ -4,6 +4,34 @@ const comunidad = {
     firebase
       .firestore()
       .collection("comunidades")
+      .orderBy("fecha", "desc")
+      .onSnapshot((query) => {
+        bodyComunidades.innerHTML = "";
+        query.forEach((doc) => {
+          console.log(doc.id);
+          bodyComunidades.innerHTML += `
+                
+  <a href="#/Canal?${doc.id}" class="list-group-item list-group-item-action ">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1 ">${doc.data().nombreComunidad}</h5>
+      <small>${moment(
+        doc.data().fecha,
+        "DD/MM/YYYY h:mm:ss"
+      ).fromNow(true)}</small>
+      
+    </div>
+    <p class="mb-1">${doc.data().descripcion}</p>
+  
+  </a>`;
+          bodyComunidades.scrollTop = bodyComunidades.scrollHeight;
+        });
+      });
+  },
+  buscarComunidades: () => {
+    const bodyComunidades = document.querySelector("#bodyComunidades");
+    firebase
+      .firestore()
+      .collection("comunidades")
       .onSnapshot((query) => {
         bodyComunidades.innerHTML = "";
         query.forEach((doc) => {
@@ -17,12 +45,7 @@ const comunidad = {
     </div>
     <p class="mb-1">${doc.data().descripcion}</p>
   
-  </a>
-              
-                
-             
-                `;
-
+  </a>`;
           bodyComunidades.scrollTop = bodyComunidades.scrollHeight;
         });
       });
@@ -37,7 +60,7 @@ const comunidad = {
       .firestore()
       .collection(`comunidades`)
       .doc(uidComunidad)
-      .get()
+      .get() //para obtener el dato
       .then((querySnapshot) => {
         nombreCanal.innerHTML = querySnapshot.data().nombreComunidad;
       });
