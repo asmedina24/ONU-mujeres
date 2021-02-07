@@ -185,12 +185,13 @@ padding-left: 10px;}
 }
 .dropdown-menu.show {
     display: block;
-    bottom: 10;
+ 
     /* bottom: 30px; */
     top: 75px !important;
-    left: -5px;
+    left: 1px !important;;
     will-change: transform;
     bottom: -165px;
+    width: 317px;
 }
 
 
