@@ -26,7 +26,7 @@ export const editProfile = () => {
     let instagram = '';
     let facebook = '';
     let aboutMe = '';
-    let photo = `<img src="Imagenes/icono-avatar-photo.png" class="img-post" id="filePost"></img>`
+    let photo = `<img src="Imagenes/profile-image.svg" class="img-post" id="filePost"></img>`
     let id;
   
     querySnapshot.forEach((doc) => {
