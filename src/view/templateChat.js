@@ -22,12 +22,6 @@ export const Chat = () => {
       divChat.innerHTML = viewChat;
       const divTabs = divChat.querySelector("#tabs");
       showTabs("", divTabs);
-      // const toggle = divChat.querySelector(".toggle");
-      // const menu = divChat.querySelector(".menu");
-      // const items = divChat.querySelectorAll(".item");
-      // const btnComunidad = divChat.querySelector("#btnComunidad");
-      // const btnChat = divChat.querySelector("#btnChat");
-      
       const formulario = divChat.querySelector("#formulario");
       const answerChat = divChat.querySelector("#answerChat");
     
