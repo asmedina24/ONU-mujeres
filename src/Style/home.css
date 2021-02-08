@@ -1,0 +1,55 @@
+@media (min-width : 320px) and (max-width: 768px) {
+
+    .logoHome{
+        margin-top: 50px;
+    }
+
+    .carousel-indicators li{
+        background-color: #4D8FC2;
+
+    }
+
+    .logoHome{
+        margin: -8px 19px 0px 56px;
+        width: 200px;
+        height: 69px;
+    }
+
+
+    .carousel-inner{
+        margin-top: 1px;
+    }
+
+    .carousel{
+        position: inherit;
+    }
+
+    .carousel.pointer-event{
+        margin-top: 3px;
+    }
+
+    .carousel slide{
+        margin: 10px;
+    }
+    
+    #btnStart{
+        margin: 8px 0px 0px 111px;
+        font-family: Roboto;
+        font-size: 14px;
+        color: #FEFEFE;
+        line-height: 16px;
+        background: #4D8FC2;
+        border: 1px solid #D8D8D8;
+        box-sizing: border-box;
+        border-radius: 4px;
+        width: 115px;
+        height: 36px;
+        left: 123px;
+        top: 498px;
+        
+
+    }
+
+
+
+}

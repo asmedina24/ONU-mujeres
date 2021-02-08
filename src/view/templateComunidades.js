@@ -14,7 +14,7 @@ export const Comunidades = () => {
  
     <!-- Default dropup button -->
     <div class="dropup">
-      <button type="button" class="btn fabComunity " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type="button" class="fabComunity " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-ellipsis-v"></i>
       </button>
       <div class="dropdown-menu">

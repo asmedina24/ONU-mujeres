@@ -8,6 +8,7 @@ import {Chat} from './view/templateChat.js'
 import { crearComunidades } from "./view/templateCrearComunidades.js";
 import {canal} from './view/templateCanal.js'
 import login from './functions/login.js';
+
 // import { message } from './view/templateMessage.js'
 
 const showtemplate = (hash,params) => {
@@ -80,11 +81,6 @@ const showtemplate = (hash,params) => {
         break;
       default:
         containerRoot.innerHTML = "<h2>La pagina que busca no existe</h2>";
-        case '':
-            containerRoot.innerHTML =''; 
-            containerRoot.appendChild(home());
-            break;
-
     }
 };
 
