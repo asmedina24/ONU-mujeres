@@ -12,17 +12,26 @@
  }
  .mensaje-error{
    margin: 5px;
-
  }
- #btnEye{
+ #flechaVolver{
    position: absolute;
+   top: -20px;
+   left: 15px;
    appearance: none;
    border: none;
    background-color: transparent !important;
    border-color: white;
    outline: none;
-   top: 88px;
-   right: 5px;
+ }
+ #btnEye{
+    position: absolute;
+    appearance: none;
+    border: none;
+    background-color: transparent !important;
+    border-color: white;
+    outline: none;
+    top: 85px;
+    right: 13px;
  }
  #eye{
    width: 20px;

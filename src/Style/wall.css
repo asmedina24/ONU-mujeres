@@ -29,7 +29,7 @@ body {
     -webkit-appearance: none;
     appearance: none;
     background-color:#22335E;
-    margin: 1px;   
+    /* margin: 1px;    */
     background-repeat: no-repeat, repeat;
     background-position: right 0.7em top 50%, 0 0;
     background-size: 0.65em auto, 100%;
@@ -62,12 +62,14 @@ body {
 nav.principal {
     position: fixed;
     top: 3em;
-    right: 0;
+    right: 0px;
     bottom: 0;
+    left: 80px;
     width: 15rem;
     background-color: #22335E;
     transform: translateX(-25rem);
-    transition: 1s all;z-index: 100;
+    transition: 1s all;
+    z-index: 100;
 }
 /* Estilos sencillos para decorar los links */
 nav.principal ul {
@@ -144,6 +146,16 @@ padding-left: 10px;}
     background-color: #009DDC;
     color: #FEFEFE;
     width: 40px;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    outline: none;
+    border: none;
 }
 #formulario{
     display: flex;
@@ -165,33 +177,34 @@ padding-left: 10px;}
     overflow-y: scroll;
 
 }
-
-}
-
 .canal .card-body {  
-  overflow-y: scroll;
-  height: 80vh;
-  -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 0;
+    overflow-y: scroll;
+    height: 80vh;
+    -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      min-height: 1px;
+      padding: 0;
+  
+  }
+  #formularioCrear{
+      
+   
+      margin-top: 30px;
+      
+  }
+  .dropdown-menu.show {
+      display: block;
+   
+      /* bottom: 30px; */
+      top: 75px !important;
+      left: 2px !important;;
+      will-change: transform;
+      bottom: -165px;
+      width: 315px;
+  }
 
 }
-#formularioCrear{
-    
- 
-    margin-top: 30px;
-    
-}
-.dropdown-menu.show {
-    display: block;
- 
-    /* bottom: 30px; */
-    top: 75px !important;
-    left: 2px !important;;
-    will-change: transform;
-    bottom: -165px;
-    width: 315px;
-}
+
+
 
 

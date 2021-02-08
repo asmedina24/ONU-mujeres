@@ -1,18 +1,49 @@
-
 export const home = () => {
   const divHome = document.createElement('div');
   const viewHome = `  
-  <ul> 
-      <a href="#/home">Home</a>
-      <br>
-      <a href="#/logIn">Login y registro </a>
-      <br>
-      <a href="#/profile">Profile</a>
+  <ul>
       <br>
       <a href="#/wall">Muro</a>
-      <br>
-    </ul> 
-    `;
+  </ul> 
+  <div class="header-home">
+        <img src="../Imagenes/Tu-oportunidad-logo.png" class="logoHome"  alt="Logo">
+  </div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="../Imagenes/slider1.png" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../Imagenes/slider2.png" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../Imagenes/slider3.png" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../Imagenes/slider4.png" alt="Third slide">
+            <button type="button" id="btnStart">COMENZAR</button>
+          </div>
+        </div>
+        <ul>
+          <a href="#/logIn">Login y registro</a>
+          </ul> 
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+  `;
   divHome.innerHTML = viewHome;
   return divHome;
 };
+
