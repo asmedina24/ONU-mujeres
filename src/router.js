@@ -1,13 +1,15 @@
 import { logIn } from './view/templateLogIn.js';
 import { home } from './view/templateHome.js';
 import { profile } from './view/templateProfile.js';
-import { editProfile }  from './view/templateEditProfile.js'
+import { editProfile } from './view/templateEditProfile.js'
 import { wall } from './view/templateWall.js';
 import { Comunidades } from './view/templateComunidades.js'
 import { Chat } from './view/templateChat.js'
 import { crearComunidades } from "./view/templateCrearComunidades.js";
 import { canal } from './view/templateCanal.js'
 import login from './functions/login.js';
+import { createNewChat } from './view/templatecreateNewChat.js'
+import { NewChat } from './view/templateNewchat.js'
 
 // import { message } from './view/templateMessage.js'
 
@@ -44,72 +46,72 @@ const showtemplate = (hash, params) => {
 
   });
 
-    switch (hash) {
-      case "":
-        containerRoot.innerHTML = "";
-        containerRoot.appendChild(home());
-        break;
-      case "#/home":
-        containerRoot.innerHTML = "";
-        containerRoot.appendChild(home());
-        break;
-      case "#/profile":
-        containerRoot.innerHTML = "";
-        containerRoot.appendChild(profile());
-        break;
-      case "#/logIn":
-        containerRoot.innerHTML = "";
-        containerRoot.appendChild(logIn());
-        break;
-      case "#/wall":
-        containerRoot.appendChild(wall());
-        break;
-      case '#/editProfile':
-        containerRoot.innerHTML =''; 
-        containerRoot.appendChild(editProfile());
-        break;  
-      case "#/message":
-        containerRoot.appendChild(message());
-        break;
-      case "#/crearComunidades":
-        containerRoot.innerHTML = '';
-        containerRoot.appendChild(crearComunidades());
-        break;
-      case "#/Canal":
-        containerRoot.innerHTML = "";
-        containerRoot.appendChild(canal(params));
-        break;
-      default:
-        containerRoot.innerHTML = "<h2>La pagina que busca no existe</h2>";
-    }
+  switch (hash) {
+    case "":
+      containerRoot.innerHTML = "";
+      containerRoot.appendChild(home());
+      break;
+    case "#/home":
+      containerRoot.innerHTML = "";
+      containerRoot.appendChild(home());
+      break;
+    case "#/profile":
+      containerRoot.innerHTML = "";
+      containerRoot.appendChild(profile());
+      break;
+    case "#/logIn":
+      containerRoot.innerHTML = "";
+      containerRoot.appendChild(logIn());
+      break;
+    case "#/wall":
+      containerRoot.appendChild(wall());
+      break;
+    case '#/editProfile':
+      containerRoot.innerHTML = '';
+      containerRoot.appendChild(editProfile());
+      break;
+    case "#/message":
+      containerRoot.appendChild(message());
+      break;
+    case "#/crearComunidades":
+      containerRoot.innerHTML = '';
+      containerRoot.appendChild(crearComunidades());
+      break;
+   
+    case "#/Canal":
+      containerRoot.innerHTML = "";
+      containerRoot.appendChild(canal(params));
+      break;
+    default:
+      containerRoot.innerHTML = "<h2>La pagina que busca no existe</h2>";
+  }
 };
 
 export const changeroute = (hash) => {
-  
-    console.log("changeroute", hash, hash.split("?"));
-let url = hash.split("?");
-hash=url[0];
-let params = url[1];
-    if (hash === '') {
-        return showtemplate(hash);
-    } if (hash === '#/home') {
-        return showtemplate(hash);
-    } if (hash === '#/profile') {
-        return showtemplate(hash);
-    } if (hash === '#/editProfile') {
-        return showtemplate(hash);
-    } if (hash === '#/wall') {
-        return showtemplate(hash);
-    } if (hash === '#/message') {
-        return showtemplate(hash);
-    } if (hash === '#/logIn') {
-        return showtemplate(hash);
-    }
-      if (hash === '#/crearComunidades') {
-        return showtemplate(hash);
-    }
-     
-    return showtemplate(hash, params);
+  console.log("changeroute", hash, hash.split("?"));
+  let url = hash.split("?");
+  hash = url[0];
+  let params = url[1];
+  if (hash === '') {
+    return showtemplate(hash);
+  } if (hash === '#/home') {
+    return showtemplate(hash);
+  } if (hash === '#/profile') {
+    return showtemplate(hash);
+  } if (hash === '#/editProfile') {
+    return showtemplate(hash);
+  } if (hash === '#/wall') {
+    return showtemplate(hash);
+  } if (hash === '#/message') {
+    return showtemplate(hash);
+  } if (hash === '#/logIn') {
+    return showtemplate(hash);
+  } if (hash === '#/crearComunidades') {
+    return showtemplate(hash);
+  } 
+ 
+
+  return showtemplate(hash, params);
 };
 
 export const showTabs = (tab, div) => {
