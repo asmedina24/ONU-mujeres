@@ -34,7 +34,7 @@ export const profile = () => {
           ${doc.data().photo === '' ? profilePhotoIcon : profilePhoto}
         </div>
         <p class="name-profile">${doc.data().name} ${doc.data().fullName}</p>
-        <p class="information-profile">${doc.data().occupacition}</p>
+        <p class="information-profile">${doc.data().occupation}</p>
         <p class="information-profile">${doc.data().city}</p>
         <div class="instagram-user">
         ${doc.data().instagram == "" ? "" : instagramUser}

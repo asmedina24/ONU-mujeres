@@ -6,7 +6,7 @@ export const addCollectionProfile = (idData, emailData, nameUser, photoUser, ful
       photo: photoUser  || '' ,
       fullName: fullNameUser,
       city: cityUser,
-      occupacition: occupationUser,
+      occupation: occupationUser,
       instagram: instagramUser,
       facebook: facebookUser,
       aboutMe: aboutMeUser,
