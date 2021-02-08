@@ -14,9 +14,7 @@ export const wall = () => {
       </div>
         <div class="Tab" id="tabs">
             </div>
-
       
-
        `;
   divWall.innerHTML = viewWall;
   const divTabs = divWall.querySelector("#tabs");

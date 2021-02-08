@@ -4,8 +4,6 @@ import { showTabs } from "../router.js";
 export const Chat = () => {
   const divChat = document.createElement("div");
   const viewChat = `  
-       <div class="Tab" id="tabs">
-           </div>
 
         <div id="contenidoprotegido"></div>
            <form id="formulario">
