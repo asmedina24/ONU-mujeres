@@ -15,3 +15,4 @@ const init = () => {
 };
 
 window.addEventListener("load", init()); // cuando cargue la pag, ejecuta función.
+

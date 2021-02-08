@@ -5,8 +5,11 @@ export const logIn = () => {
     const viewHome = ` 
      <div class="div-login">
         <div class="header-login"> 
-        <p class="header-login-p"> Iniciar Sesión </p> 
-        <img src="../Imagenes/spain.png" id="bandera" alt="eye">
+            <button id="flechaVolver">
+              <img src="../Imagenes/flecha.png" id="imgFlecha" alt="Logo">
+            </button>
+            <p class="header-login-p"> Iniciar Sesión </p> 
+            <img src="../Imagenes/spain.png" id="bandera" alt="eye">
         </div>
         <div class = "body-login">
           <img src="../Imagenes/Tu-oportunidad-logo.png" id="logoLogin" alt="Logo"> 
@@ -45,6 +48,10 @@ export const logIn = () => {
                 let pass = document.getElementById('pwd').value;
                     login.loginMail(email, pass);
             });
+        let btnVolver = divHome.querySelector('#flechaVolver');
+            btnVolver.addEventListener("click", () => {
+                window.location = ('#/home'); 
+            });    
       
     return divHome;
 };

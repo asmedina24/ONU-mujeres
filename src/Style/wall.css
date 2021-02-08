@@ -29,7 +29,7 @@ body {
     -webkit-appearance: none;
     appearance: none;
     background-color:#22335E;
-    margin: 1px;   
+    /* margin: 1px;    */
     background-repeat: no-repeat, repeat;
     background-position: right 0.7em top 50%, 0 0;
     background-size: 0.65em auto, 100%;
@@ -62,12 +62,14 @@ body {
 nav.principal {
     position: fixed;
     top: 3em;
-    right: 0;
+    right: 0px;
     bottom: 0;
+    left: 80px;
     width: 15rem;
     background-color: #22335E;
     transform: translateX(-25rem);
     transition: 1s all;
+    z-index: 100;
 }
 /* Estilos sencillos para decorar los links */
 nav.principal ul {
@@ -88,16 +90,25 @@ nav.principal a:hover {
 header {
     display: flex;
     background-color: #22335E;
-    height: 50px;}
+    height: 50px;
+padding-left: 10px;}
 .titulo{
     color: white;
     font-size: 20px;
     margin-top: 10px;
 }
+.tituloCanal{
+    color: white;
+    font-size: 15px;
+    margin-top: 13px;
+    padding-left:2px ;
+
+
+}
 .form-outline{
     background-color: #E0E0E0;
 }
-#search{
+#search {
     border-radius: 20px;
     width: 277px;
     height: 26px;
@@ -106,4 +117,94 @@ header {
     margin-bottom: 9px;
 
 }
+#agregar {
+    background-color: #4D8FC2;
+    border-radius: 28px;
+    display: flex;
+    justify-content: center;
+    width: 10%;
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    left: calc(50% - 56px/2);
+   
 }
+#suma {
+    position: absolute;
+    left: 40.83%;
+    right: 20.83%;
+    top: 31.83%;
+    bottom: 20.83%;
+    color: #FEFEFE;
+
+}
+.fabComunity {
+    border-radius: 30px;
+    position: fixed;
+    left: 261px;
+    bottom: 5%;
+    background-color: #009DDC;
+    color: #FEFEFE;
+    width: 40px;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    outline: none;
+    border: none;
+}
+#formulario{
+    display: flex;
+    position: absolute;
+    margin-top: 130px;
+    flex-wrap: wrap;
+}
+.derecha{
+    display: flex;
+    justify-content: flex-end;
+}
+.izquierda{
+    display: flex;
+    justify-content: flex-start;
+}
+#contenidoprotegido{
+    height: 40vh;
+    margin-top: 3px;
+    overflow-y: scroll;
+
+}
+.canal .card-body {  
+    overflow-y: scroll;
+    height: 80vh;
+    -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      min-height: 1px;
+      padding: 0;
+  
+  }
+  #formularioCrear{
+      
+   
+      margin-top: 30px;
+      
+  }
+  .dropdown-menu.show {
+      display: block;
+   
+      /* bottom: 30px; */
+      top: 75px !important;
+      left: 2px !important;;
+      will-change: transform;
+      bottom: -165px;
+      width: 315px;
+  }
+
+}
+
+
+
+

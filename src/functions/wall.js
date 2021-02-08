@@ -30,8 +30,3 @@ function closeSubmenu(menu,e) {
   }
 }
 
-// /*Buscador*/
-// function search (pokemon, text) {
-//   const search = pokemon.filter(pokemon => pokemon.name.includes(text));
-//   return search
-// };
