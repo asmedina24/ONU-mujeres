@@ -1,6 +1,7 @@
 import { logIn } from './view/templateLogIn.js';
 import { home } from './view/templateHome.js';
 import { profile } from './view/templateProfile.js';
+import { editProfile }  from './view/templateEditProfile.js'
 import { wall } from './view/templateWall.js';
 import {Comunidades} from './view/templateComunidades.js'
 import {Chat} from './view/templateChat.js'
@@ -53,6 +54,10 @@ const showtemplate = (hash) => {
             containerRoot.innerHTML =''; 
             containerRoot.appendChild(profile());
             break;
+        case '#/editProfile':
+            containerRoot.innerHTML =''; 
+            containerRoot.appendChild(editProfile());
+            break;
         case '#/logIn':
             containerRoot.innerHTML =''; 
             containerRoot.appendChild(logIn());
@@ -76,6 +81,8 @@ export const changeroute = (hash) => {
     } if (hash === '#/home') {
         return showtemplate(hash);
     } if (hash === '#/profile') {
+        return showtemplate(hash);
+    } if (hash === '#/editProfile') {
         return showtemplate(hash);
     } if (hash === '#/wall') {
         return showtemplate(hash);
