@@ -1,6 +1,7 @@
 import { logIn } from './view/templateLogIn.js';
 import { home } from './view/templateHome.js';
 import { profile } from './view/templateProfile.js';
+import { editProfile }  from './view/templateEditProfile.js'
 import { wall } from './view/templateWall.js';
 import {Comunidades} from './view/templateComunidades.js'
 import {Chat} from './view/templateChat.js'
@@ -62,6 +63,10 @@ const showtemplate = (hash,params) => {
       case "#/wall":
         containerRoot.appendChild(wall());
         break;
+      case '#/editProfile':
+        containerRoot.innerHTML =''; 
+        containerRoot.appendChild(editProfile());
+        break;  
       case "#/message":
         containerRoot.appendChild(message());
         break;
@@ -75,6 +80,11 @@ const showtemplate = (hash,params) => {
         break;
       default:
         containerRoot.innerHTML = "<h2>La pagina que busca no existe</h2>";
+        case '':
+            containerRoot.innerHTML =''; 
+            containerRoot.appendChild(home());
+            break;
+
     }
 };
 
@@ -89,6 +99,8 @@ let params = url[1];
     } if (hash === '#/home') {
         return showtemplate(hash);
     } if (hash === '#/profile') {
+        return showtemplate(hash);
+    } if (hash === '#/editProfile') {
         return showtemplate(hash);
     } if (hash === '#/wall') {
         return showtemplate(hash);
