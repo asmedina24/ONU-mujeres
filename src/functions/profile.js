@@ -12,7 +12,6 @@ export const addCollectionProfile = (idData, emailData, nameUser, photoUser, ful
       aboutMe: aboutMeUser,
       uid: idData,
     }).then(() => {
-      alert('perfil listo');
     }).catch(() => {
     });
   };
@@ -34,7 +33,6 @@ export const editProfileFirebase = (id, emailData, nameUser, photoUser, fullName
     occupation: occupationUser,
   })
     .then(() => {
-      console.log("perfil editado");
     })
     .catch(() => {
     });
