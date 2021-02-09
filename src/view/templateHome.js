@@ -4,8 +4,6 @@ export const home = () => {
   <ul>
       <br>
       <a href="#/wall">Muro</a>
-      <br>
-      <a href="#/logIn">Login y registro</a>
   </ul> 
   <div class="header-home">
         <img src="../Imagenes/Tu-oportunidad-logo.png" class="logoHome"  alt="Logo">
@@ -19,12 +17,11 @@ export const home = () => {
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-          
             <img class="d-block w-100" src="../Imagenes/slider1.png" alt="First slide">
             <div id="logIn1">
-             <ul>
-               <a href="#/logIn">Saltar</a>
-             </ul>
+              <ul>
+               <a href="#/logIn">saltar</a>
+              </ul> 
             </div>
           </div>
           <div class="carousel-item">
@@ -35,10 +32,10 @@ export const home = () => {
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="../Imagenes/slider4.png" alt="Third slide">
-            <button type="button" id="btnStart">COMENZAR</button>
+            <button  type="button" id="btnStart">COMENZAR</button>
           </div>
-          
         </div>
+        
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -52,4 +49,3 @@ export const home = () => {
   divHome.innerHTML = viewHome;
   return divHome;
 };
-
