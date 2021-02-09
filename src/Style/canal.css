@@ -1,0 +1,8 @@
+@media (min-width : 320px) and (max-width: 768px) {
+.photoUserChannel{
+    width: 60px;
+    height: 60px;
+    border-radius: 150px;
+}
+
+}

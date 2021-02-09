@@ -62,7 +62,7 @@
                  formulario.addEventListener('submit', (e) => {
                  e.preventDefault()
                  console.log(encontrarid);
-                   chat.guardarChatUnit(answerChat, fecha, uid);
+                   chat.guardarChatUnit(answerChat, fecha, uid, encontrarid);
                });
                chat.mostrarChatUnico(email);
 

@@ -41,14 +41,18 @@ const chat = {
   encontrarid:(email) =>{
     let gri = firebase.firestore().collection('Chats')
     .where('usuarios', 'array-contains', email)
-    .get().then((querySnapshot) => {
-      console.log(querySnapshot.docs);
-      console.log(querySnapshot);
-      querySnapshot.forEach((doc) => {
-        console.log(doc.id);
-        return doc.id;
+    .get()
+    .then((querySnapshot) => {
+      let docID
+      const prueba2 = querySnapshot.forEach((doc) => {
+        docID = doc.id;
+        console.log(11111, docID);
+        return docID;
       })
-    });
+      console.log(docID);
+      return prueba2;
+    }).then((response) => console.log(333, response));
+    return gri.then((response) => console.log(444, response));
   },
 
   mostrarChatUnico: (email) => {
@@ -83,7 +87,7 @@ const chat = {
 
                 }
 
-                console.log(doc.data());
+                // console.log(doc.data());
               });
             });
           });
@@ -122,15 +126,15 @@ const chat = {
 
         },
 
-          guardarChatUnit: (mensaje, fecha, sender) => {
-            firebase.firestore().collection('Chats').add({
+          guardarChatUnit: (mensaje, fecha, sender, id) => {
+            firebase.firestore().collection("Chats").doc(id).collection('comentarios').add({
              mensaje: mensaje.value,
              sender: sender,
               fecha: fecha,
               
 
             }).then((res) => {
-              console.log('mensaje guardado');
+              console.log('mensaje guardado, guardarChatUnit');
               answerChat.value = "";
             }).catch((e) => {
               console.log(e)
@@ -147,7 +151,7 @@ const chat = {
               img: img,
 
             }).then((res) => {
-              console.log('mensaje guardado');
+              console.log('mensaje guardado, guardarChart');
               answerChat.value = "";
             }).catch((e) => {
               console.log(e)
@@ -165,7 +169,7 @@ const chat = {
 
             })
               .then((res) => {
-                console.log("mensaje guardado en firebase");
+                console.log("mensaje guardado en firebase, guardarGrupoChat");
                 window.location.hash = "#/Chat";
               })
               .catch((e) => {
@@ -192,10 +196,10 @@ const chat = {
             <small>${doc.data().fecha}</small>
           </div>
           <p class="mb-1">${doc.data().usuario}</p>
- <div class="d-flex justify-content-around">
- <button class="btn"><i class="fas fa-thumbs-up "></i> Me gusta</button>
- <button class="btn" ><i class="fas fa-comment-alt"></i> Responder</div></button>
-        </div>   
+        <div class="d-flex justify-content-around">
+        <button class="btn"><i class="fas fa-thumbs-up "></i> Me gusta</button>
+        <button class="btn" ><i class="fas fa-comment-alt"></i> Responder</div></button>
+                </div>   
        
         `;
               });
