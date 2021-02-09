@@ -89,7 +89,7 @@ export const likeFb = (id, email, uidComunidad) => {
     .doc(uidComunidad)
     .collection("mensaje")
     .doc(id)
-    .get() //para obtener el dato
+    .get()
     .then((query) => {
       const message = query.data();
       // const oldValue = post.like.length;
@@ -97,7 +97,8 @@ export const likeFb = (id, email, uidComunidad) => {
         for (let i = 0; i < message.meGusta.length; i += 1) { // recorre el array del like
           if (message.meGusta[i] === email) { // verifica si ya el usuario está en el array
             message.meGusta.splice(i, 1); // sentencia para eliminar un elemento de un array
-            firebase.firestore().collection("comunidades")
+            firebase.firestore()
+            .collection("comunidades")
             .doc(uidComunidad)
             .collection("mensaje")
             .doc(id)

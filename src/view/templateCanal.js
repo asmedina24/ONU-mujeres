@@ -1,5 +1,5 @@
 // import comunidad from "../functions/comunidad.js";
-import { saveMessage, displayChannel, getProfile } from "../functions/canalDeComunidad.js";
+import { saveMessage, displayChannel, getProfile, likeFb } from "../functions/canalDeComunidad.js";
 
 import { showTabs } from "../router.js";
 
@@ -64,9 +64,11 @@ export const canal = (uid) => {
   
   query.forEach((doc) => {
     const likeButton = document.getElementById(`buttonLike-${doc.id}`); // boton para el like
+    console.log("likeButton", likeButton)
 
     // llama a la funcion LIKE
     likeButton.addEventListener('click', () => {
+      console.log("entro al like")
         likeFb(doc.id, emailUSer, uid);
       });
   })

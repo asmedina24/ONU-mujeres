@@ -38,22 +38,6 @@ const chat = {
     });
 
   },
-  encontrarid:(email) =>{
-    let gri = firebase.firestore().collection('Chats')
-    .where('usuarios', 'array-contains', email)
-    .get()
-    .then((querySnapshot) => {
-      let docID
-      const prueba2 = querySnapshot.forEach((doc) => {
-        docID = doc.id;
-        console.log(11111, docID);
-        return docID;
-      })
-      console.log(docID);
-      return prueba2;
-    }).then((response) => console.log(333, response));
-    return gri.then((response) => console.log(444, response));
-  },
 
   mostrarChatUnico: (email) => {
     const contenidoprotegidoChat = document.querySelector("#contenidoprotegidoChat");
@@ -127,7 +111,10 @@ const chat = {
         },
 
           guardarChatUnit: (mensaje, fecha, sender, id) => {
-            firebase.firestore().collection("Chats").doc(id).collection('comentarios').add({
+            firebase.firestore()
+            .collection("Chats")
+            .doc(id)
+            .collection('mensajes').add({
              mensaje: mensaje.value,
              sender: sender,
               fecha: fecha,
@@ -136,6 +123,18 @@ const chat = {
             }).then((res) => {
               console.log('mensaje guardado, guardarChatUnit');
               answerChat.value = "";
+            }).catch((e) => {
+              console.log(e)
+
+            });
+          },
+
+          guardarColeccionChart: (emailUser, emailFriends) => {
+            firebase.firestore().collection('Chats').add({
+              canalChats: "",
+              usuarios: [ emailUser, emailFriends ],
+            }).then((res) => {
+              console.log('mensaje guardado, guardarColeccionChart');
             }).catch((e) => {
               console.log(e)
 
