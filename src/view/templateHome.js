@@ -1,10 +1,6 @@
 export const home = () => {
   const divHome = document.createElement('div');
   const viewHome = `  
-  <ul>
-      <br>
-      <a href="#/wall">Muro</a>
-  </ul> 
   <div class="header-home">
         <img src="../Imagenes/Tu-oportunidad-logo.png" class="logoHome"  alt="Logo">
   </div>
@@ -20,7 +16,7 @@ export const home = () => {
             <img class="d-block w-100" src="../Imagenes/slider1.png" alt="First slide">
             <div id="logIn1">
               <ul>
-               <a href="#/logIn">saltar</a>
+               <a href="#/logIn">SALTAR</a>
               </ul> 
             </div>
           </div>
@@ -32,10 +28,9 @@ export const home = () => {
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="../Imagenes/slider4.png" alt="Third slide">
-            <button  type="button" id="btnStart">COMENZAR</button>
+            <a href="#/logIn"><input type="button" id="btnStart" value="COMENZAR"></a>
           </div>
         </div>
-        
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>

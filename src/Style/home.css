@@ -13,13 +13,13 @@
     }
   
     .logoHome{
-        margin: -8px 19px 0px 56px;
+        margin: 33px 19px 0px 56px;
         width: 200px;
         height: 69px;
     }
 
     .carousel-inner{
-        margin-top: 1px;
+        margin-top: 16px;
     }
 
     .carousel{
@@ -33,9 +33,9 @@
     .carousel slide{
         margin: 10px;
     }
-    
-    #btnStart{
-        margin: 8px 0px 0px 111px;
+
+        #btnStart{
+        margin: 9px 32px 8px 105px;
         font-family: Roboto;
         font-size: 14px;
         color: #FEFEFE;
@@ -48,8 +48,6 @@
         height: 36px;
         left: 123px;
         top: 498px;
-        
-
     }
 
 
