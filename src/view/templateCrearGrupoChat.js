@@ -1,13 +1,13 @@
-import comunidad from "../functions/comunidad.js";
+import chat from "../functions/chat.js";
 
-export const crearComunidades = () => {
+export const crearGrupoChat = () => {
   const divCreateComunity = document.createElement("div");
   const viewCreateComunity = ` 
   
   <header class="d-flex justify-content-between align-items-center">
 <!-- Nuestro botón. para volver y crear -->
  <a href="#/wall" class="btn " >  <i class="fa fa-chevron-left text-white"></i>  </a>
-   <p class="titulo">Nueva Comunidad</p>
+   <p class="titulo">Nuevo Grupo Chat</p>
   <button type="" class="btn  text-white" id="btnCrear"> Crear </button>
 </header>
  
@@ -16,17 +16,16 @@ export const crearComunidades = () => {
 
 <form id="formularioCrear" class="form">
   <div class="form-group">
-    <label for="exampleInputEmail1">Nombre</label>
-    <input type="text" class="form-control" id="nombre" aria-describedby="NameHelp" placeholder="ej:  (#Santiago-biblioredes) ">
+    <label for="exampleInputEmail1">Nombre del Grupo</label>
+    <input type="text" class="form-control" id="nombre" aria-describedby="NameHelp">
     
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Descripción (opcional)</label>
-    <input type="text" class="form-control" id="descripcion" placeholder="Estudiantes de la generacion 15, comparte contenidos">
+   
   </div>
   <div class="form-group form-check">
     
-    <label class="form-check-label" for="exampleCheck1">Compartir esta comunidad</label>
+    <label class="form-check-label" for="exampleCheck1">Crear Grupo </label>
     <input type="checkbox" class="" id="estado">
   </div>
 
@@ -55,9 +54,9 @@ export const crearComunidades = () => {
         -2
       )}`;
       //condicionamos que si el valor del nombre del canal y la descripción es distinto de vacio guardamos.
-      if (nombre.value != "" && descripcion.value != "") {
-        comunidad.guardarComunidad(nombre, descripcion, valorEstado, fecha);
-        window.location.hash = "#/wall";
+      if (nombre.value != "" ) {
+        chat.guardarGrupoChat(nombre, valorEstado, fecha);
+       
       }
     },
     false
