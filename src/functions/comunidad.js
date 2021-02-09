@@ -7,20 +7,21 @@ const comunidad = {
       .onSnapshot((query) => {
         bodyComunidades.innerHTML = "";
         query.forEach((doc) => {
-          console.log(doc.id);
-          bodyComunidades.innerHTML += /*html*/`         
-            <a href="#/Canal?${doc.id}" class="list-group-item list-group-item-action ">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1 ">${doc.data().nombreComunidad}</h5>
-              <small>${moment(
-                doc.data().fecha,
-                "DD/MM/YYYY h:mm:ss"
-              ).fromNow(true)}</small>
-              
-            </div>
-            <p class="mb-1">${doc.data().descripcion}</p>
-            </a>`;
-            
+          // console.log(doc.id);
+          bodyComunidades.innerHTML += `
+                
+  <a href="#/Canal?${doc.id}" class="list-group-item list-group-item-action ">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1 ">${doc.data().nombreComunidad}</h5>
+      <small>${moment(
+        doc.data().fecha,
+        "DD/MM/YYYY h:mm:ss"
+      ).fromNow(true)}</small>
+      
+    </div>
+    <p class="mb-1">${doc.data().descripcion}</p>
+  
+  </a>`;
           bodyComunidades.scrollTop = bodyComunidades.scrollHeight;
         });
       });
