@@ -6,17 +6,15 @@ export const wall = () => {
      </div>
     <div class="selection">
       <div class="button-selection" id="btnComunidad">
-        <p>comunidad</p>
+        <p>COMUNIDAD</p>
       </div>
       <div class="button-selection" id="btnChat">
-      <p>chat</p>
+      <p>CHATS</p>
       </div>
       </div>
         <div class="Tab" id="tabs">
             </div>
-
       
-
        `;
   divWall.innerHTML = viewWall;
   const divTabs = divWall.querySelector("#tabs");

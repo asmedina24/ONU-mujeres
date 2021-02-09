@@ -28,17 +28,7 @@ const chat = {
         });
 
     },
-    // contenidoChat: () =>{
-    //      firestore.collection('chat').orderBy('date', 'desc').onSnapshot((querySnapshot) => {
-    //   const lista = document.querySelector('#public_muro');
-    //   lista.innerHTML = '';
-    //   querySnapshot.forEach((response) => {
-    //     lista.innerHTML += `
-    //     <div id="postDiv-${response.id}" class="postdiv">`;
-    //   });
-    // });
-    // },
-
+   
     guardarChart: (name, answerChat, uid, fecha, img) =>{
         firebase.firestore().collection('chat').add({
             nombre: name,

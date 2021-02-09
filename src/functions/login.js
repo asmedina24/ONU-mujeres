@@ -9,9 +9,16 @@ const login = {
       
     // </div>`;
     // ...
-    window.location = ('#/wall');
+    firebase.firestore().collection('perfil').where('email', '==', email).get().then((user) => {
+    if(!user.empty){
+      window.location = ('#/wall');
+    } else {
+       window.location = ('#/editProfile');
+    }
+    }) 
   })
   .catch((error) => {
+    console.log(error);
     const formLogin = document.getElementById('formLogin');
     formLogin.reset();
     const mensaje = document.querySelector('#menssageError');

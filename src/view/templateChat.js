@@ -4,8 +4,6 @@ import { showTabs } from "../router.js";
 export const Chat = () => {
   const divChat = document.createElement("div");
   const viewChat = `  
-       <div class="Tab" id="tabs">
-           </div>
 
         <div id="contenidoprotegido"></div>
            <form id="formulario">
@@ -21,7 +19,7 @@ export const Chat = () => {
 
       divChat.innerHTML = viewChat;
       const divTabs = divChat.querySelector("#tabs");
-      showTabs("", divTabs);
+      // showTabs("Chat", divTabs);
       // const toggle = divChat.querySelector(".toggle");
       // const menu = divChat.querySelector(".menu");
       // const items = divChat.querySelectorAll(".item");
