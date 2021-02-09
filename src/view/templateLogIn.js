@@ -3,7 +3,7 @@ import login from "../functions/login.js";
 export const logIn = () => {
     const divHome = document.createElement('div');
     const viewHome = ` 
-     <div class="div-login">
+     <div id="pagLogin" class="div-login">
         <div class="header-login"> 
         <p class="header-login-p"> Iniciar Sesión </p> 
         <img src="../Imagenes/spain.png" id="bandera" alt="eye">
