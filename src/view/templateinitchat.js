@@ -57,11 +57,12 @@
            (`00${date.getMinutes()}`).slice(-2)}:${
            (`00${date.getSeconds()}`).slice(-2)}`;
 
+           console.log(999, encontrarid);
          
      
                  formulario.addEventListener('submit', (e) => {
                  e.preventDefault()
-                 console.log(encontrarid);
+                //  console.log(encontrarid);
                    chat.guardarChatUnit(answerChat, fecha, uid);
                });
                chat.mostrarChatUnico(email);

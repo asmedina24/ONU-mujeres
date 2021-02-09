@@ -41,14 +41,15 @@ const chat = {
   encontrarid:(email) =>{
     let gri = firebase.firestore().collection('Chats')
     .where('usuarios', 'array-contains', email)
-    .get().then((querySnapshot) => {
-      console.log(querySnapshot.docs);
-      console.log(querySnapshot);
+    .get()
+    .then((querySnapshot) => {
+      let docID;
       querySnapshot.forEach((doc) => {
-        console.log(doc.id);
-        return doc.id;
+        docID = doc.id;
+              
       })
-    });
+      console.log(11111, docID);
+    })
   },
 
   mostrarChatUnico: (email) => {
@@ -122,21 +123,21 @@ const chat = {
 
         },
 
-          guardarChatUnit: (mensaje, fecha, sender) => {
-            firebase.firestore().collection('Chats').add({
-             mensaje: mensaje.value,
-             sender: sender,
-              fecha: fecha,
-              
+        guardarChatUnit: (mensaje, fecha, sender, id) => {
+          firebase.firestore().collection("Chats").doc(id).collection('mensajes').add({
+           mensaje: mensaje.value,
+           sender: sender,
+            fecha: fecha,
+            
 
-            }).then((res) => {
-              console.log('mensaje guardado');
-              answerChat.value = "";
-            }).catch((e) => {
-              console.log(e)
+          }).then((res) => {
+            console.log('mensaje guardado, guardarChatUnit');
+            answerChat.value = "";
+          }).catch((e) => {
+            console.log(e)
 
-            });
-          },
+          });
+        },
 
           guardarChart: (name, answerChat, uid, fecha, img) => {
             firebase.firestore().collection('chat').add({
