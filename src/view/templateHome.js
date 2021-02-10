@@ -1,6 +1,7 @@
 export const home = () => {
   const divHome = document.createElement('div');
   const viewHome = `  
+
   <div class="header-home">
         <img src="../Imagenes/Tu-oportunidad-logo.png" class="logoHome"  alt="Logo">
   </div>
