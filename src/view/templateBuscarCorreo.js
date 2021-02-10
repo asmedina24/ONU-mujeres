@@ -1,6 +1,9 @@
   
-//  import chat from "../functions/chat.js"
+ import chat from "../functions/chat.js"
+
  export const buscarCorreo = () => {
+  const currentUserData = firebase.auth().currentUser;
+  const emailData = currentUserData.email;
    const divbuscarCorreo = document.createElement("div");
    const viewbuscarCorreo = `    
   
@@ -26,7 +29,7 @@
                 <h5 class="mb-1 ">${doc.data().name}</h5>
                 <p> ${doc.data().email}</p>
                 </div></a>`; 
-            
+                chat.guardarColeccionChart(emailData, doc.data().email)
             });
           });
         //  chat.buscarCorreo();

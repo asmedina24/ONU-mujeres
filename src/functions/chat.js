@@ -38,18 +38,6 @@ const chat = {
     });
 
   },
-  encontrarid:(email) =>{
-    let gri = firebase.firestore().collection('Chats')
-    .where('usuarios', 'array-contains', email)
-    .get().then((querySnapshot) => {
-      console.log(querySnapshot.docs);
-      console.log(querySnapshot);
-      querySnapshot.forEach((doc) => {
-        console.log(doc.id);
-        return doc.id;
-      })
-    });
-  },
 
   mostrarChatUnico: (email) => {
     const contenidoprotegidoChat = document.querySelector("#contenidoprotegidoChat");
@@ -83,7 +71,7 @@ const chat = {
 
                 }
 
-                console.log(doc.data());
+                // console.log(doc.data());
               });
             });
           });
@@ -122,16 +110,31 @@ const chat = {
 
         },
 
-          guardarChatUnit: (mensaje, fecha, sender) => {
-            firebase.firestore().collection('Chats').add({
+          guardarChatUnit: (mensaje, fecha, sender, id) => {
+            firebase.firestore()
+            .collection("Chats")
+            .doc(id)
+            .collection('mensajes').add({
              mensaje: mensaje.value,
              sender: sender,
               fecha: fecha,
               
 
             }).then((res) => {
-              console.log('mensaje guardado');
+              console.log('mensaje guardado, guardarChatUnit');
               answerChat.value = "";
+            }).catch((e) => {
+              console.log(e)
+
+            });
+          },
+
+          guardarColeccionChart: (emailUser, emailFriends) => {
+            firebase.firestore().collection('Chats').add({
+              canalChats: "",
+              usuarios: [ emailUser, emailFriends ],
+            }).then((res) => {
+              console.log('mensaje guardado, guardarColeccionChart');
             }).catch((e) => {
               console.log(e)
 
@@ -147,7 +150,7 @@ const chat = {
               img: img,
 
             }).then((res) => {
-              console.log('mensaje guardado');
+              console.log('mensaje guardado, guardarChart');
               answerChat.value = "";
             }).catch((e) => {
               console.log(e)
@@ -165,7 +168,7 @@ const chat = {
 
             })
               .then((res) => {
-                console.log("mensaje guardado en firebase");
+                console.log("mensaje guardado en firebase, guardarGrupoChat");
                 window.location.hash = "#/Chat";
               })
               .catch((e) => {
@@ -192,10 +195,10 @@ const chat = {
             <small>${doc.data().fecha}</small>
           </div>
           <p class="mb-1">${doc.data().usuario}</p>
- <div class="d-flex justify-content-around">
- <button class="btn"><i class="fas fa-thumbs-up "></i> Me gusta</button>
- <button class="btn" ><i class="fas fa-comment-alt"></i> Responder</div></button>
-        </div>   
+        <div class="d-flex justify-content-around">
+        <button class="btn"><i class="fas fa-thumbs-up "></i> Me gusta</button>
+        <button class="btn" ><i class="fas fa-comment-alt"></i> Responder</div></button>
+                </div>   
        
         `;
               });

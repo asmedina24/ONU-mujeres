@@ -26,7 +26,7 @@ export const editProfile = () => {
     let instagram = '';
     let facebook = '';
     let aboutMe = '';
-    let photo = `<img src="Imagenes/icono-avatar-photo.png" class="img-post" id="filePost"></img>`
+    let photo = `<img src="Imagenes/profile-image.svg" class="img-post" id="filePost"></img>`
     let id;
   
     querySnapshot.forEach((doc) => {
@@ -100,7 +100,6 @@ export const editProfile = () => {
   image.onchange = () => {
     const file = image.files[0];
     const reader = new FileReader();
-    // uploadedImage.src= '';
     // Recibira el valor Base64 cada vez que un usuario seleccione un archivo de su dispositivo
     reader.onloadend = () => { // El evento loadend es emitido cuando la carga se ha detenido
       imgb64 = reader.result;
