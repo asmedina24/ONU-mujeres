@@ -8,7 +8,7 @@ const comunidad = {
       .onSnapshot((query) => {
         bodyComunidades.innerHTML = "";
         query.forEach((doc) => {
-          console.log(doc.id);
+          // console.log(doc.id);
           bodyComunidades.innerHTML += `
                 
   <a href="#/Canal?${doc.id}" class="list-group-item list-group-item-action ">

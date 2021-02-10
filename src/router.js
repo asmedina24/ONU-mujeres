@@ -8,6 +8,10 @@ import {Chat} from './view/templateChat.js'
 import { crearComunidades } from "./view/templateCrearComunidades.js";
 import {canal} from './view/templateCanal.js'
 import login from './functions/login.js';
+import {crearGrupoChat} from './view/templateCrearGrupoChat.js';
+import {posteoChat} from './view/templatePosteoChat.js';
+import {initchat} from './view/templateinitchat.js';
+import {buscarCorreo} from './view/templateBuscarCorreo.js'
 
 // import { message } from './view/templateMessage.js'
 
@@ -75,10 +79,28 @@ const showtemplate = (hash,params) => {
         containerRoot.innerHTML = '';
         containerRoot.appendChild(crearComunidades());
         break;
+        case "#/crearGrupoChat":
+          containerRoot.innerHTML = '';
+          containerRoot.appendChild(crearGrupoChat());
+          break;
       case "#/Canal":
         containerRoot.innerHTML = "";
         containerRoot.appendChild(canal(params));
         break;
+        case "#/Chat":
+         
+        containerRoot.appendChild(Chat(params));
+        break;
+        case "#/posteoChat":
+          containerRoot.innerHTML = "";
+        containerRoot.appendChild(posteoChat());
+          break;
+          case "#/initchat":
+          containerRoot.appendChild(initchat(params));
+            break;
+            case "#/buscarCorreo":
+          containerRoot.appendChild(buscarCorreo());
+            break;
       default:
         containerRoot.innerHTML = "<h2>La pagina que busca no existe</h2>";
     }
@@ -86,7 +108,7 @@ const showtemplate = (hash,params) => {
 
 export const changeroute = (hash) => {
   
-    console.log("changeroute", hash, hash.split("?"));
+    // console.log("changeroute", hash, hash.split("?"));
 let url = hash.split("?");
 hash=url[0];
 let params = url[1];
@@ -104,10 +126,17 @@ let params = url[1];
         return showtemplate(hash);
     } if (hash === '#/logIn') {
         return showtemplate(hash);
-    }
-      if (hash === '#/crearComunidades') {
+    } if (hash === '#/crearComunidades') {
         return showtemplate(hash);
-    }
+    } if (hash === '#/crearGrupoChat') {
+      return showtemplate(hash);
+    } if (hash === '#/Chat') {
+    return showtemplate(hash);
+  }if (hash === '#/posteoChat') {
+  return showtemplate(hash);
+}if (hash === '#/buscarCorreo') {
+  return showtemplate(hash);
+}
      
     return showtemplate(hash, params);
 };
@@ -125,7 +154,6 @@ export const showTabs = (tab, div) => {
       containerRoot.appendChild(Comunidades());
       break;
     case "Chat":
-      containerRoot.innerHTML = "";  
       containerRoot.appendChild(Chat());
       break;
     default:

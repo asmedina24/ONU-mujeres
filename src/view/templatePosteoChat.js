@@ -1,7 +1,5 @@
-import comunidad from "../functions/comunidad.js";
-
-
-export const canal = (uid) => {
+import chat from "../functions/chat.js";
+export const posteoChat = (uid) => {
   const divcanal = document.createElement("div");
   const viewCanal = `  
   <header class="d-flex justify-content align-items-center">
@@ -56,12 +54,13 @@ export const canal = (uid) => {
         -2
       )}`;
 
-      if (messageCanal.value!='') comunidad.saveMessage(name, messageCanal, fecha, uid);
+      if (messageCanal.value!='') chat.saveMessage(name, messageCanal, fecha, uid);
     });
  
-    comunidad.mostrarCanal(uid);
+    chat.mostrarChat2(user);
   
 
   });
   return divcanal;
 };
+
