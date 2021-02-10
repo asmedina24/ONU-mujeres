@@ -4,11 +4,8 @@ import { saveMessage, displayChannel, getProfile, likeFb } from "../functions/ca
 import { showTabs } from "../router.js";
 
 export const canal = (uid) => {
-  let idUserMessage;
-  const currentUserData = firebase.auth().currentUser; // Datos del Usuario que accedió
-  const emailUSer = currentUserData.email; // Email del usuario que accedio
-  const idUSer =currentUserData.uid;
-  
+  // let idUserMessage;
+
   const divcanal = document.createElement("div");
   const viewCanal = /*html*/`  
     <header class="d-flex justify-content align-items-center">
@@ -40,11 +37,15 @@ export const canal = (uid) => {
   divcanal.innerHTML = viewCanal;
 
   const bodyCanal = divcanal.querySelector("#bodyCanal");
-  firebase.firestore().collection(`comunidades/${uid}/mensaje`).onSnapshot((query) => {
-    bodyCanal.innerHTML = "";
-    query.forEach((doc) => {
-      idUserMessage = `${doc.data().idUsuario}`;
-      bodyCanal.innerHTML += /*html*/`
+
+  firebase.firestore()
+    .collection(`comunidades/${uid}/mensaje`)
+    .get()
+    .then((query) => {
+      bodyCanal.innerHTML = "";
+      query.forEach((doc) => {
+        const idUserMessage = `${doc.data().idUsuario}`;
+        bodyCanal.innerHTML += /*html*/`
         <div class="list-group-item ">
           <div class="d-flex w-100 justify-content-between">
             <img src="Imagenes/profile-image.svg" class="photoUserChannel" id="photoProfileChannel-${doc.id}">
@@ -53,54 +54,49 @@ export const canal = (uid) => {
           </div>
           <p class="mb-1">${doc.data().mensaje}</p>
           <div class="d-flex justify-content-around">
-          <button class="btn"><i class="fas fa-thumbs-up " id="buttonLike-${doc.id}"></i> Me gusta ${doc.data().correo}</button>
+          <button class="btn" id="buttonLike-${doc.id}"><i class="fas fa-thumbs-up "></i> Me gusta  ${doc.data().meGusta.length}</button>
           <button class="btn" ><i class="fas fa-comment-alt"></i> Responder</div></button>
         </div>   
-    `;
+        `;
 
-  getProfile(idUserMessage, `nameProfileChannel-${doc.id}`, `photoProfileChannel-${doc.id}`);
+        getProfile(idUserMessage, `nameProfileChannel-${doc.id}`, `photoProfileChannel-${doc.id}`);
 
-  });
-  
-  query.forEach((doc) => {
-    const likeButton = document.getElementById(`buttonLike-${doc.id}`); // boton para el like
-    console.log("likeButton", likeButton)
-
-    // llama a la funcion LIKE
-    likeButton.addEventListener('click', () => {
-      console.log("entro al like")
-        likeFb(doc.id, emailUSer, uid);
       });
-  })
+      query.forEach((doc) => {
+        const likeButton = document.getElementById(`buttonLike-${doc.id}`); // boton para el like
+        firebase.auth().onAuthStateChanged((user) => {
 
-});
+          // llama a la funcion LIKE
+          likeButton.addEventListener('click', () => {
+            console.log("entro al like")
+            // likeButton.style.background = '#009DDC';
+            likeFb(doc.id, user.email, uid);
+          });
+        });
+      });
+      const divTabs = divcanal.querySelector("#tabs");
 
-  const divTabs = divcanal.querySelector("#tabs");
+      const formSendChannel = divcanal.querySelector("#formSendChannel");
+      const messageCanal = divcanal.querySelector("#messageCanal");
 
-  const formSendChannel = divcanal.querySelector("#formSendChannel");
-  const messageCanal = divcanal.querySelector("#messageCanal");
+      firebase.auth().onAuthStateChanged((user) => {
+        const idUSer = user.uid;
+        const emailUSer = user.email;
+        formSendChannel.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const date = new Date();
+          const dateMessage = `${`00${date.getDate()}`.slice(-2)}/${`00${date.getMonth() + 1
+            }`.slice(-2)}/${date.getFullYear()} ${`00${date.getHours()}`.slice(
+              -2
+            )}:${`00${date.getMinutes()}`.slice(-2)}:${`00${date.getSeconds()}`.slice(
+              -2
+            )}`;
 
-   //obtiene el usuario actual de Auth .
-  firebase.auth().onAuthStateChanged((user) => {
+          if (messageCanal.value != '') saveMessage(messageCanal, dateMessage, uid, emailUSer, idUSer);
+        });
+        displayChannel(uid);
+      });
 
-    formSendChannel.addEventListener("submit", (e) => {
-      e.preventDefault();
-      // const img = user.photoURL;
-      const date = new Date();
-      const dateMessage = `${`00${date.getDate()}`.slice(-2)}/${`00${
-        date.getMonth() + 1
-      }`.slice(-2)}/${date.getFullYear()} ${`00${date.getHours()}`.slice(
-        -2
-      )}:${`00${date.getMinutes()}`.slice(-2)}:${`00${date.getSeconds()}`.slice(
-        -2
-      )}`;
-
-      if (messageCanal.value!='') saveMessage(messageCanal, dateMessage, uid, emailUSer, idUSer);
     });
- 
-    displayChannel(uid);
-  
-
-  });
   return divcanal;
 };
