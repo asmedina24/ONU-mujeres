@@ -59,18 +59,17 @@ export const initchat = (email) => {
           const img = user.photoURL;
           const date = new Date();
           const fecha = `${(`00${date.getDate()}`).slice(-2)}/${(`00${date.getMonth() + 1}`).slice(-2)}/${date.getFullYear()} ${(`00${date.getHours()}`).slice(-2)}:${(`00${date.getMinutes()}`).slice(-2)}:${(`00${date.getSeconds()}`).slice(-2)}`;
-         // chat.guardarColeccionChart(`nombre${doc.id}`, doc.data().uid)
-      
+
+
           formulario.addEventListener('submit', (e) => {
             console.log("tengo click");
             e.preventDefault()
             chat.guardarChatUnit(answerChat, fecha, uid, docID);
-            
+
           });
           chat.mostrarChatUnico(email);
-      
+        })
       })
-    })
-  });
+    });
   return divChatUnit;
 };

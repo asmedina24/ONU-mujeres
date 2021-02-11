@@ -142,6 +142,7 @@ const chat = {
     });
 
   },
+  
 
   // guardarColeccionChart: (sender, email) => {
   //   firebase.firestore().collection('Chats').onSnapshot((query) => {
