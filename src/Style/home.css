@@ -1,41 +1,38 @@
 @media (min-width : 320px) and (max-width: 768px) {
 
     .logoHome{
-        margin: 33px 19px 0px 56px;
-        width: 200px;
-        height: 69px;
+        margin: 33px 22px 0px 65px;
+        width: 147px;
+        height: 44px;
     }
     #logIn1{
-        margin: 51px 33px -68px 190px;
+        margin: 5px 42px -17px 152px;
     }
     h5{
         font-size: 10px;
         Font family: Roboto
     }
-    .carousel-indicators{
-        background-color: #4D8FC2;
-    }
+    
     .carousel-indicators li{
         background-color: #4D8FC2;
     }    
     .carousel-inner{
-        height: 483px;
+        width: 213px;
+        height: 365px;
     }
     .carousel{
         position: inherit;
     }
-    .carousel-item{
+    .carousel-item active {
     }
-    .carousel-item active{
-        height: 405px;
-    }
+    
     .carousel.pointer-event{
     }
     .carousel slide{
         margin: 10px;
     }
     #btnStart{
-        margin: 18px 32px 8px 105px;
+        margin: 11px 32px 8px 86px;
         font-family: Roboto;
         font-size: 14px;
         color: #FEFEFE;
@@ -49,9 +46,10 @@
         left: 123px;
         top: 498px;
     }
-    .translate{
+    .transtale{
       display: flex;
       justify-content: center;
+      margin: 10px 10px 10px -24px;
     }
     .selectTranslate{
         display: flex;
