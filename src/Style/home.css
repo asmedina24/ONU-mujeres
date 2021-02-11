@@ -1,33 +1,47 @@
 @media (min-width : 320px) and (max-width: 768px) {
 
     .logoHome{
-        margin-top: 50px;
+        margin: 33px 19px 0px 56px;
+        width: 200px;
+        height: 69px;
     }
 
     #logIn1{
         margin: -114px 0px 0px 234px;
+    }
+    
+    h5{
+        Font family: Roboto
+        margin: 4px 11px 6px 75px;
+
+    }
+     
+    .carousel-indicators{
+        background-color: #4D8FC2;
     }
 
     .carousel-indicators li{
         background-color: #4D8FC2;
     }
   
-    .logoHome{
-        margin: 33px 19px 0px 56px;
-        width: 200px;
-        height: 69px;
-    }
+    
 
     .carousel-inner{
-        margin-top: 16px;
+        
     }
 
     .carousel{
         position: inherit;
     }
 
+    .carousel-item{
+     
+     
+    }
+
+    
     .carousel.pointer-event{
-        margin-top: 3px;
+        
     }
 
     .carousel slide{
@@ -50,6 +64,16 @@
         top: 498px;
     }
 
+    .translate{
+      display: flex;
+      justify-content: center;
+    }
+    
+    .selectTranslate{
+        display: flex;
+        justify-content: center;
+    }
+   
 
 
 }
