@@ -7,15 +7,17 @@
     }
 
     #logIn1{
-        margin: -114px 0px 0px 234px;
+        margin: 51px 33px -68px 190px;
     }
     
     h5{
+        font-size: 10px;
         Font family: Roboto
-        margin: 4px 11px 6px 75px;
-
     }
-     
+    
+}
+
+
     .carousel-indicators{
         background-color: #4D8FC2;
     }
@@ -27,7 +29,7 @@
     
 
     .carousel-inner{
-        
+        height: 405px;
     }
 
     .carousel{
@@ -39,6 +41,9 @@
      
     }
 
+    .carousel-item active{
+        height: 405px;
+    }
     
     .carousel.pointer-event{
         
@@ -49,17 +54,17 @@
     }
 
         #btnStart{
-        margin: 9px 32px 8px 105px;
+        margin: 0px 32px 8px 105px;
         font-family: Roboto;
         font-size: 14px;
         color: #FEFEFE;
-        line-height: 16px;
+        line-height: 5px;
         background: #4D8FC2;
         border: 1px solid #D8D8D8;
         box-sizing: border-box;
         border-radius: 4px;
         width: 115px;
-        height: 36px;
+        height: 26px;
         left: 123px;
         top: 498px;
     }
