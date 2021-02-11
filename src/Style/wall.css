@@ -35,6 +35,7 @@ body {
     background-size: 0.65em auto, 100%;
     overflow: hidden;
     cursor: pointer;
+    text-align: center;
 }
 /* Boton de menu */
 .botonMenu {
@@ -75,6 +76,7 @@ nav.principal {
 nav.principal ul {
     margin: 0;
     padding: 0;
+    padding-left: 20px;
     list-style: none;
 }
 nav.principal a {
@@ -95,7 +97,8 @@ padding-left: 10px;}
 .titulo{
     color: white;
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: -38px;
+    text-align: center;
 }
 .tituloCanal{
     color: white;
@@ -107,6 +110,8 @@ padding-left: 10px;}
 }
 .form-outline{
     background-color: #E0E0E0;
+    width: 100%;
+    text-align: -webkit-center;
 }
 #search {
     border-radius: 20px;
@@ -141,7 +146,7 @@ padding-left: 10px;}
 .fabComunity {
     border-radius: 30px;
     position: fixed;
-    left: 261px;
+    left: 80%;
     bottom: 5%;
     background-color: #009DDC;
     color: #FEFEFE;
@@ -193,14 +198,13 @@ padding-left: 10px;}
       
   }
   .dropdown-menu.show {
-      display: block;
-   
-      /* bottom: 30px; */
-      top: 75px !important;
-      left: 2px !important;;
-      will-change: transform;
-      bottom: -165px;
-      width: 315px;
+    display: block;
+    /* bottom: -39px !important; */
+    top: 65px !important;
+    left: 1px !important;
+    will-change: transform;
+    bottom: -165px;
+    width: 315px;
   }
 
 }
