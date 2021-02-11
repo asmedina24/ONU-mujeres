@@ -51,8 +51,8 @@ const chat = {
       })
       console.log(docID);
       return prueba2;
-    }).then((response) => console.log(333, response));
-    return gri.then((response) => console.log(444, response));
+    });
+    console.log(222, gri)
   },
 
   mostrarChatUnico: (email) => {
