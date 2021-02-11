@@ -3,7 +3,7 @@ import login from "../functions/login.js";
 export const logIn = () => {
     const divHome = document.createElement('div');
     const viewHome = ` 
-     <div class="div-login">
+     <div id="pagLogin" class="div-login">
         <div class="header-login"> 
             <button id="flechaVolver">
               <img src="../Imagenes/flecha.png" id="imgFlecha" alt="Logo">
@@ -38,7 +38,9 @@ export const logIn = () => {
      </div>
       `;
     divHome.innerHTML = viewHome;
-        let btnEye = divHome.querySelector("#btnEye");
+        let btnEye = divHome.querySelector("#btnEye");https://medium.com/@martin.sikora/node-js-websocket-simple-chat-tutorial-2def3a841b61
+
+
             btnEye.addEventListener("click", ()=>{
               login.ocultarPassword();
             });
