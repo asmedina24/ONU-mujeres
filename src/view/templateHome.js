@@ -6,7 +6,7 @@ export const home = () => {
         <img src="../Imagenes/Tu-oportunidad-logo.png" class="logoHome"  alt="Logo">
   </div>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        
+       
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="../Imagenes/img1.png" alt="First slide">
@@ -52,3 +52,10 @@ export const home = () => {
   divHome.innerHTML = viewHome;
   return divHome;
 };
+
+/* <ol class="carousel-indicators">
+<li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+</ol>  */
