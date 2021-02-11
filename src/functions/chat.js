@@ -5,6 +5,7 @@ const chat = {
       contenidoProtegido.innerHTML = "";
       query.forEach(doc => {
         console.log(doc.id);
+        console.log(doc.data());
         contenidoProtegido.innerHTML += `
                 
             <a href="#/posteoChat?${doc.id}" class="list-group-item list-group-item-action ">
@@ -12,28 +13,13 @@ const chat = {
                 <h5 class="mb-1 ">${doc.data().nombreComunidad}</h5>
                 <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
               </div>
+              <p class="mb-1">${doc.data().descripcion}</p>
+              <p class="mb-1">${doc.data().img}</p>
+              
              
             
             </a>`;
-        // if(doc.data().uid === uid){
-        //   contenidoProtegido.innerHTML += ` <div class="derecha">
-        //   <span class=""> ${doc.data().texto}</span>
-        //   <span class=""> ${doc.data().fecha}</span>
-        //   <span class=""> ${doc.data().img}</span>
-        //   <span class=""> ${doc.data().nombre}</span>
-        //   </div>
-        //   `;
-
-        // } else {
-        //   contenidoProtegido.innerHTML += ` <div class="izquiera">
-        //   <span class=""> ${doc.data().texto}</span>
-        //   <span class=""> ${doc.data().fecha}</span>
-        //   <span class=""> ${doc.data().img}</span>
-        //   <span class=""> ${doc.data().nombre}</span>
-        //     </div>`;
-
-        // }
-        contenidoProtegido.scrollTop = contenidoProtegido.scrollHeight;
+        //  contenidoProtegido.scrollTop = contenidoProtegido.scrollHeight;
       });
     });
 
@@ -218,12 +204,13 @@ const chat = {
 
     });
   },
-  guardarGrupoChat: (name, estado, fecha) => {
+  guardarGrupoChat: (name, description, estado, fecha) => {
     console.log(name.value, estado, fecha);
 
     firebase.firestore().collection("chat").add({
       img: "",
       estado: estado,
+      descripcion: description.value,
       nombreComunidad: name.value,
       fecha: fecha,
 

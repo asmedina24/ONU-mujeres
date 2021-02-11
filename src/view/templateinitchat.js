@@ -4,16 +4,7 @@ export const initchat = (email) => {
   const divChatUnit = document.createElement("div");
   const viewChatUnit = `    
   
- 
-</header>
-
-   <div class="input-group">
-    <div class="form-outline">
-    <input type="search" placeholder=" Buscar" id='search'/>
-      <label><i class="fas fa-search"></i></label>
-    </div>
-  </div>
-        <div class="Tab" id="tabs">
+           <div class="Tab" id="tabs">
             </div>
          <div id="contenidoprotegidoChat"></div>
          <form id="formulario">
