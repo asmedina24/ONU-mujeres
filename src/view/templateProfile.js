@@ -18,17 +18,16 @@ export const profile = () => {
   const loarde = divProfile.querySelector('#loader');
   const profileData = divProfile.querySelector('#profileData'); // Llamando al div donde se imprimirán los post
   firebase.firestore().collection('perfil').where('email', '==', emailData).get().then((querySnapshot) => {
-    // console.log(2222, querySnapshot)
     querySnapshot.forEach((doc) => {
       loarde.remove(); 
-      const profilePhotoIcon = `<img src="Imagenes/icono-avatar-photo.png" id="filePost"></img>`
+      const profilePhotoIcon = `<img src="Imagenes/profile-image.svg" id="filePost" class="img-post"></img>`
       const profilePhoto = `<img src="${doc.data().photo}" class="img-post"></img>`;
       const instagramUser = `<p>Instagram</p>
       <p class="information-profile-instagram">${doc.data().instagram}</p>`;
       const facebookUser = `<p>Facebook</p>
       <p class="information-profile-facebook">${doc.data().facebook}</p>`;
 
-      profileData.innerHTML += ` 
+      profileData.innerHTML += /*html*/` 
       <div class="profile-data-user"> 
         <div class="profile-photo">
           ${doc.data().photo === '' ? profilePhotoIcon : profilePhoto}
@@ -37,7 +36,7 @@ export const profile = () => {
         <p class="information-profile">${doc.data().occupation}</p>
         <p class="information-profile">${doc.data().city}</p>
         <div class="instagram-user">
-        ${doc.data().instagram == "" ? "" : instagramUser}
+          ${doc.data().instagram == "" ? "" : instagramUser}
         </div>
         <div class="facebook-user">
           ${doc.data().facebook == "" ? "" : facebookUser}
