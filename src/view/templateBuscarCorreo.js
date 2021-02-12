@@ -1,6 +1,4 @@
-
 import chat from "../functions/chat.js"
-
 export const buscarCorreo = () => {
   // const currentUserData = firebase.auth().currentUser;
   // const emailData = currentUserData.email;
@@ -23,6 +21,7 @@ export const buscarCorreo = () => {
   firebase.firestore().collection('perfil').onSnapshot((query) => {
     buscarCorreoid.innerHTML = "";
     query.forEach((doc) => {
+      console.log(doc.data())
 
       // <a href="#/initchat?${doc.data().email}" class="list-group-item list-group-item-action ">
       buscarCorreoid.innerHTML += `    

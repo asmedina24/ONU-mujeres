@@ -32,7 +32,8 @@ export const crearGrupoChat = () => {
 
 </form>
    </div>
-      `; //   <button type="submit" class="btn btn-primary" id="btn">crear</button>
+      `; 
+      
   divCreateComunity.innerHTML = viewCreateComunity;
   const formulario = divCreateComunity.querySelector("#formularioCrear");
   const nombre = divCreateComunity.querySelector("#nombre");
@@ -61,11 +62,7 @@ export const crearGrupoChat = () => {
         chat.guardarGrupoChat(nombre, descripcion, valorEstado, fecha);
         window.location.hash = "#/wall";
       }
-      // if (nombre.value != "" ) {
-      //   chat.guardarGrupoChat(nombre, valorEstado, fecha);
-       
-      // }
-    },
+     },
     false
   );
   return divCreateComunity;
