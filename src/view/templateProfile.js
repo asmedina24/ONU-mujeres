@@ -33,17 +33,19 @@ export const profile = () => {
           ${doc.data().photo === '' ? profilePhotoIcon : profilePhoto}
         </div>
         <div class="datos_profile">
-        <p class="name-profile">${doc.data().name} ${doc.data().fullName}</p>
-        <p class="information-profile">${doc.data().occupation}</p>
-        <p class="information-profile">${doc.data().city}</p>
+            <p class="name-profile">${doc.data().name} ${doc.data().fullName}</p>
+            <p class="information-profile">${doc.data().occupation}</p>
+            <p class="information-profile">${doc.data().city}</p>
+            <div class="instagram-user">
+              ${doc.data().instagram == "" ? "" : instagramUser}
+            </div>
+            <div class="facebook-user">
+              ${doc.data().facebook == "" ? "" : facebookUser}
+            </div>
+            <p class="information-profile">${doc.data().aboutMe}</p>  
+      
         </div>
-        <div class="instagram-user">
-          ${doc.data().instagram == "" ? "" : instagramUser}
-        </div>
-        <div class="facebook-user">
-          ${doc.data().facebook == "" ? "" : facebookUser}
-        </div>
-        <p class="information-profile">${doc.data().aboutMe}</p>
+      
       </div> 
       <div class="form-button">
         <a href="#/editProfile"> 
