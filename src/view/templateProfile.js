@@ -32,9 +32,11 @@ export const profile = () => {
         <div class="profile-photo">
           ${doc.data().photo === '' ? profilePhotoIcon : profilePhoto}
         </div>
+        <div class="datos_profile">
         <p class="name-profile">${doc.data().name} ${doc.data().fullName}</p>
         <p class="information-profile">${doc.data().occupation}</p>
         <p class="information-profile">${doc.data().city}</p>
+        </div>
         <div class="instagram-user">
           ${doc.data().instagram == "" ? "" : instagramUser}
         </div>
