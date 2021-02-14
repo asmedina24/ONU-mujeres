@@ -8,12 +8,22 @@
     #logIn1{
         margin: 5px 42px -17px 179px;
     }
+
+    #logIn1 a { 
+        margin-left: 37px;
+    }
+    
     #logIn2{
         margin: -41px 5px -2px 1px;
     }
+
+    #logIn2 ul {
+        margin-left: 23px;
+    }
+
     h5{
         font-size: 10px;
-        Font family: Roboto
+        font-family: Roboto;
     }
     
     .carousel-indicators li{
