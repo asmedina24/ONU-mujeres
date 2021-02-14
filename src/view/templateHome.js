@@ -14,6 +14,11 @@ export const home = () => {
                <a href="#/logIn">SALTAR</a>
               </ul> 
             </div>
+            <div id="logIn2">
+              <ul>
+               <a href="#/log">CONTINUAR</a>
+              </ul>
+            </div>
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="../Imagenes/slider2.jpg" alt="Second slide">
