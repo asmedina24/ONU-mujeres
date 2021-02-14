@@ -24,7 +24,13 @@
     top: 160px;
     left: 97px;
 }
-  
+.datos_profile{
+  margin-bottom: 69px;
+}
+p{
+  margin-bottom: 0 !important;
+}
+}  
 
   
   @keyframes spin {
@@ -47,7 +53,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 321px;
   }
   
   #profileForm {
@@ -226,8 +231,8 @@
     line-height: 20px;
     letter-spacing: 0.25px;
     color: rgba(0, 0, 0, 0.87);
-    margin-left: 26px;
-    margin-top: 19px;
+    margin-bottom: 13px;
+    margin-top: 13px;
   }
 
   
