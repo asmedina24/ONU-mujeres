@@ -3,6 +3,8 @@
   .profile-data-user {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .back {
     margin: 6px;
@@ -22,7 +24,13 @@
     top: 160px;
     left: 97px;
 }
-  
+.datos_profile{
+  margin-bottom: 69px;
+}
+p{
+  margin-bottom: 0 !important;
+}
+}  
 
   
   @keyframes spin {
@@ -35,16 +43,16 @@
   }
 
   .image-upload{
-    position: absolute;
+    position: relative;
     z-index: 1;
-    top: 144px;
-    right: 72px;
+    top: -56px;
+    right: -56px;
+    margin-bottom: -41px;
   }
   .edit-profile {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 321px;
   }
   
   #profileForm {
@@ -56,23 +64,24 @@
   .profile {
     margin: 6px 0px 6px;
     height: 31px;
-    position: absolute;
+    position: relative;
     border: none;
-    left: 25px;
     width: 100%;
     outline: none;
     max-width: 254px;
     padding-left: 4px;
+    top: -33px;
   }
   
   .label-profile label {
-    position: absolute;
+    position: relative;
     z-index: 1;
     background: white;
-    left: 28px;
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 12px
+    font-size: 12px;
+    top: -17px;
+    left: 5px;
   }
 
   .label-name {
@@ -102,10 +111,11 @@
  }
 
  .label-profile p {
-  left: 35px;
-  position: absolute;
+  left: 6px;
+  position: relative;
   z-index: 1;
   font-size: 10px;
+  top: -60px;
  }
  .inf-input-instagram {
   bottom: -11px;
@@ -188,8 +198,6 @@
     font-size: 34px;
     line-height: 36px;
     color: rgba(0, 0, 0, 0.87);
-    margin-left: 26px;
-    margin-bottom: 5px;
   }
 
   .information-profile {
@@ -197,10 +205,9 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 20px;
     letter-spacing: 0.25px;
     color: rgba(0, 0, 0, 0.87);
-    margin-left: 26px;
+    align-self: end;
   }
 
   .information-profile-instagram, .information-profile-facebook {
@@ -225,8 +232,8 @@
     line-height: 20px;
     letter-spacing: 0.25px;
     color: rgba(0, 0, 0, 0.87);
-    margin-left: 26px;
-    margin-top: 19px;
+    margin-bottom: 13px;
+    margin-top: 13px;
   }
 
   
@@ -246,7 +253,8 @@
   .form-button {
     display: flex;
     justify-content: center;
-    margin-top: 21px;
+    margin-top: -23px;
+    margin-bottom: 50px;
   }
 
   .form-button a {
