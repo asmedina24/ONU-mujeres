@@ -1,21 +1,11 @@
-
 import chat from "../functions/chat.js"
-
 export const buscarCorreo = () => {
   // const currentUserData = firebase.auth().currentUser;
   // const emailData = currentUserData.email;
   const divbuscarCorreo = document.createElement("div");
   const viewbuscarCorreo = `  
     
-   <div class="input-group">
-   <div class="form-outline">
-   <input type="search" placeholder=" Buscar" id='search'/>
-     <label><i class="fas fa-search"></i></label>
-     <button  id="boton">buscarrrrr</button>
-
-   </div>
- </div>
-     
+        
   
         <div id="buscarCorreo"></div>                          
        
@@ -31,6 +21,7 @@ export const buscarCorreo = () => {
   firebase.firestore().collection('perfil').onSnapshot((query) => {
     buscarCorreoid.innerHTML = "";
     query.forEach((doc) => {
+      console.log(doc.data())
 
       // <a href="#/initchat?${doc.data().email}" class="list-group-item list-group-item-action ">
       buscarCorreoid.innerHTML += `    
