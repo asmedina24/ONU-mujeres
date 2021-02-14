@@ -1,21 +1,21 @@
-// import comunidad from "../functions/comunidad.js";
 import { saveMessage, displayChannel, getProfile, likeFb } from "../functions/canalDeComunidad.js";
 
 import { showTabs } from "../router.js";
 
 export const canal = (uid) => {
-  // let idUserMessage;
 
   const divcanal = document.createElement("div");
   const viewCanal = /*html*/`  
     <header class="d-flex justify-content align-items-center">
       <!-- Nuestro botón. para volver y crear -->
       <a href="#/wall" class="btn " >  <i class="fa fa-chevron-left text-white"></i>  </a>
+      <div id="header-title">
         <p class="tituloCanal" id='nombreCanal'></p>
+        <p class="tituloCanal" id='miembros'>17 miembros</p>
     </header>
  
-    <div class="card canal">
-        <div class="card-body">
+    <div class="card canal" id="cardCanal">
+        <div class="card-body" id="CardBody">
           <div id="bodyCanal">
           </div>
         </div>
@@ -38,50 +38,64 @@ export const canal = (uid) => {
 
   const bodyCanal = divcanal.querySelector("#bodyCanal");
 
-  firebase.firestore()
-    .collection(`comunidades/${uid}/mensaje`)
-    .get()
-    .then((query) => {
-      bodyCanal.innerHTML = "";
-      query.forEach((doc) => {
-        const idUserMessage = `${doc.data().idUsuario}`;
-        bodyCanal.innerHTML += /*html*/`
-        <div class="list-group-item ">
-          <div class="d-flex w-100 justify-content-between">
-            <img src="Imagenes/profile-image.svg" class="photoUserChannel" id="photoProfileChannel-${doc.id}">
-            <h5 class="mb-1 " id="nameProfileChannel-${doc.id}"></h5>
-            <small>${doc.data().fecha}</small>
+  firebase.auth().onAuthStateChanged((user) => {
+    const idUSer = user.uid;
+    const emailUSer = user.email;
+
+    const postWall = (uid) => {
+      firebase.firestore()
+      .collection(`comunidades/${uid}/mensaje`)
+      .orderBy('fecha', 'asc')
+      .get()
+      .then((query) => {
+        bodyCanal.innerHTML = "";
+        query.forEach((doc) => {
+          const idUserMessage = `${doc.data().idUsuario}`;
+          const likeColorBlue = `<button class="btn btn-small-font " id="buttonLike-${doc.id}" style="color: rgb(0, 157, 220)" ><i class="fas fa-thumbs-up" id="iconLike-${doc.id}"></i> Me gusta  ${doc.data().meGusta.length}</button>`
+          const likeColorBlack = `<button class="btn btn-small-font" id="buttonLike-${doc.id}" style="color: #212529" ><i class="fas fa-thumbs-up" id="iconLike-${doc.id}"></i> Me gusta  ${doc.data().meGusta.length}</button>`
+         
+         bodyCanal.innerHTML += /*html*/`
+          <div class="list-group-item " id="headerPost">
+            <div id=divPhoto>
+              <img src="Imagenes/profile-image.svg" class="photoUserChannel" id="photoProfileChannel-${doc.id}">
+            </div>
+            <div id=divInfo>
+            <div class="d-flex w-100 justify-content-between">
+              <div id=divName>
+              <h5 class="mb-1 " id="nameProfileChannel-${doc.id}"></h5>
+              <small>${doc.data().fecha}</small>
+              </div>
+            </div>
+            <p class="mb-4">${doc.data().mensaje}</p>
+            <div class="d-flex justify-content-around">
+              ${doc.data().meGusta.includes(emailUSer) ? likeColorBlue : likeColorBlack}
+              <button class="btn btn-small-font" ><i class="fas fa-comment-alt"></i> Responder</div></button>
+            </div>
+            </div>
           </div>
-          <p class="mb-1">${doc.data().mensaje}</p>
-          <div class="d-flex justify-content-around">
-          <button class="btn" id="buttonLike-${doc.id}"><i class="fas fa-thumbs-up "></i> Me gusta  ${doc.data().meGusta.length}</button>
-          <button class="btn" ><i class="fas fa-comment-alt"></i> Responder</div></button>
-        </div>   
+               
         `;
 
-        getProfile(idUserMessage, `nameProfileChannel-${doc.id}`, `photoProfileChannel-${doc.id}`);
+          getProfile(idUserMessage, `nameProfileChannel-${doc.id}`, `photoProfileChannel-${doc.id}`);
 
-      });
-      query.forEach((doc) => {
-        const likeButton = document.getElementById(`buttonLike-${doc.id}`); // boton para el like
-        firebase.auth().onAuthStateChanged((user) => {
+        });
+        query.forEach((doc) => {
+          const likeButton = document.getElementById(`buttonLike-${doc.id}`); // boton para el like
+          firebase.auth().onAuthStateChanged((user) => {
 
-          // llama a la funcion LIKE
-          likeButton.addEventListener('click', () => {
-            console.log("entro al like")
-            // likeButton.style.background = '#009DDC';
-            likeFb(doc.id, user.email, uid);
+            // llama a la funcion LIKE
+            likeButton.addEventListener('click', () => {
+              console.log("entro al like")
+              likeFb(doc.id, user.email, uid);
+            });
           });
         });
-      });
-      const divTabs = divcanal.querySelector("#tabs");
+        const divTabs = divcanal.querySelector("#tabs");
 
-      const formSendChannel = divcanal.querySelector("#formSendChannel");
-      const messageCanal = divcanal.querySelector("#messageCanal");
+        const formSendChannel = divcanal.querySelector("#formSendChannel");
+        const messageCanal = divcanal.querySelector("#messageCanal");
 
-      firebase.auth().onAuthStateChanged((user) => {
-        const idUSer = user.uid;
-        const emailUSer = user.email;
+
         formSendChannel.addEventListener("submit", (e) => {
           e.preventDefault();
           const date = new Date();
@@ -92,11 +106,17 @@ export const canal = (uid) => {
               -2
             )}`;
 
-          if (messageCanal.value != '') saveMessage(messageCanal, dateMessage, uid, emailUSer, idUSer);
+          if (messageCanal.value != '') {
+            saveMessage(messageCanal, dateMessage, uid, emailUSer, idUSer);
+            postWall(uid)
+          }
         });
         displayChannel(uid);
-      });
 
-    });
+        // document.getElementById("CardBody").scrollTo(0, document.getElementById("cardCanal").scrollHeight)
+      });
+    }
+    postWall(uid)
+  });
   return divcanal;
 };
