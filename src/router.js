@@ -3,7 +3,7 @@ import { home } from './view/templateHome.js';
 import { profile } from './view/templateProfile.js';
 import { editProfile }  from './view/templateEditProfile.js'
 import { wall } from './view/templateWall.js';
-import {Comunidades} from './view/templateComunidades.js'
+import {Comunidades, menu} from './view/templateComunidades.js'
 import {Chat} from './view/templateChat.js'
 import { crearComunidades } from "./view/templateCrearComunidades.js";
 import {canal} from './view/templateCanal.js'
@@ -15,61 +15,38 @@ import {buscarCorreo} from './view/templateBuscarCorreo.js'
 
 // import { message } from './view/templateMessage.js'
 
-const showtemplate = (hash,params) => {
-    console.log("showtemplate" ,params);
-    const containerRoot = document.getElementById('root');
-    containerRoot.innerHTML = `
-  <!-- Definimos nuestra cabecera -->
-<header>
-    <!-- Nuestro botón. En el ejemplo uso Font-awesome para mostrar un icono de barras -->
-   
-    <button class="botonMenu">
-        <i class="fa fa-bars"></i>  
-    </button>
- 
-  <!--   Los links -->
-    <nav class="principal">
-        <ul>
-            <li><a href="#/home">home.</a></li>
-            <li><a href="#/logIn">login!</a></li>
-            <li><a href="#/profile">perfil.</a></li>
-            <li><a href="#/wall">wall!</a></li>
-            <li id="cerrarSesion">cerrar</li>
-           
-        </ul>
-    </nav>
-   <p class="titulo">Tu Oportunidad</p>
-</header>  
-    `;
-
-    const cerrar = document.getElementById('cerrarSesion');
-    cerrar.addEventListener("click", () => {
-        login.cerrarSesion();
-
-    });
+const showtemplate = (hash,params, name) => {
+  const containerRoot = document.getElementById('root');
+  const containerMenu = document.getElementById('root2');
 
     switch (hash) {
       case "":
         containerRoot.innerHTML = "";
+        containerMenu.innerHTML = "";
         containerRoot.appendChild(home());
         break;
       case "#/home":
         containerRoot.innerHTML = "";
+        containerMenu.innerHTML = "";
         containerRoot.appendChild(home());
         break;
       case "#/profile":
         containerRoot.innerHTML = "";
+        containerMenu.innerHTML = "";
         containerRoot.appendChild(profile());
         break;
       case "#/logIn":
         containerRoot.innerHTML = "";
+        containerMenu.innerHTML = "";
         containerRoot.appendChild(logIn());
         break;
       case "#/wall":
         containerRoot.appendChild(wall());
+        menu();
         break;
       case '#/editProfile':
         containerRoot.innerHTML =''; 
+        containerMenu.innerHTML = "";
         containerRoot.appendChild(editProfile());
         break;  
       case "#/message":
@@ -77,14 +54,17 @@ const showtemplate = (hash,params) => {
         break;
       case "#/crearComunidades":
         containerRoot.innerHTML = '';
+        containerMenu.innerHTML = "";
         containerRoot.appendChild(crearComunidades());
         break;
         case "#/crearGrupoChat":
           containerRoot.innerHTML = '';
+          containerMenu.innerHTML = "";
           containerRoot.appendChild(crearGrupoChat());
           break;
       case "#/Canal":
         containerRoot.innerHTML = "";
+        containerMenu.innerHTML = "";
         containerRoot.appendChild(canal(params));
         break;
         case "#/Chat":
@@ -93,16 +73,21 @@ const showtemplate = (hash,params) => {
         break;
         case "#/posteoChat":
           containerRoot.innerHTML = "";
+          containerMenu.innerHTML = "";
         containerRoot.appendChild(posteoChat());
           break;
           case "#/initchat":
-          containerRoot.appendChild(initchat(params));
+          containerMenu.innerHTML = ""; 
+          containerRoot.innerHTML = "";
+          containerRoot.appendChild(initchat(params, name));
             break;
             case "#/buscarCorreo":
           containerRoot.appendChild(buscarCorreo());
+          menu();
             break;
       default:
         containerRoot.innerHTML = "<h2>La pagina que busca no existe</h2>";
+        containerMenu.innerHTML = "";
     }
 };
 

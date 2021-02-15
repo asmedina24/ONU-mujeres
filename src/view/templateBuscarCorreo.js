@@ -11,7 +11,7 @@ export const buscarCorreo = () => {
    <div class="form-outline">
    <input type="search" placeholder=" Buscar" id='search'/>
      <label><i class="fas fa-search"></i></label>
-     <button  id="boton">buscarrrrr</button>
+     
 
    </div>
  </div>

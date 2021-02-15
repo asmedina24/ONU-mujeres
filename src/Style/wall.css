@@ -179,6 +179,16 @@ padding-left: 10px;}
     align-items: center;
 
 }
+.principales{  
+    color: white;
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+    list-style: none;
+    opacity: 80%;
+ 
+
+}
 #contenidoprotegido{
     /* height: 40vh; */
     margin-top: 3px;
