@@ -88,7 +88,8 @@ export const likeFb = (id, email, uidComunidad) => {
         }
       } else {
         message.meGusta.push(email); // incluyeme este usuario en este array
-        firebase.firestore().collection("comunidades")
+        firebase.firestore()
+          .collection("comunidades")
           .doc(uidComunidad)
           .collection("mensaje")
           .doc(id)
@@ -97,6 +98,21 @@ export const likeFb = (id, email, uidComunidad) => {
         });
       }
       numberLikeUpdate(id, message.meGusta.length, oldValue);
+    })
+    .catch(() => {
+    });
+};
+
+
+// Eliminar Canal en firebase
+export const deleteChannel = (id) => {
+  firebase.firestore()
+  .collection('comunidades')
+  .doc(id)
+  .delete()
+    .then(() => {
+      console.log("Canal Eliminado")
+      window.history.back();
     })
     .catch(() => {
     });

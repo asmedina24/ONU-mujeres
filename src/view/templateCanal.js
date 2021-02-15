@@ -1,4 +1,4 @@
-import { saveMessage, displayChannel, getProfile, likeFb } from "../functions/canalDeComunidad.js";
+import { saveMessage, displayChannel, getProfile, likeFb, deleteChannel } from "../functions/canalDeComunidad.js";
 
 import { showTabs } from "../router.js";
 
@@ -6,12 +6,14 @@ export const canal = (uid) => {
 
   const divcanal = document.createElement("div");
   const viewCanal = /*html*/`  
-    <header class="d-flex justify-content align-items-center">
+    <header class="d-flex justify-content align-items-center" id="headerName">
       <!-- Nuestro botón. para volver y crear -->
       <a href="#/wall" class="btn " >  <i class="fa fa-chevron-left text-white"></i>  </a>
       <div id="header-title">
         <p class="tituloCanal" id='nombreCanal'></p>
         <p class="tituloCanal" id='miembros'>17 miembros</p>
+      </div>
+      <span id="spanDelete"><i class="fa fa-trash" id="delete" aria-hidden="true"></i></span>
     </header>
  
     <div class="card canal" id="cardCanal">
@@ -88,13 +90,22 @@ export const canal = (uid) => {
               console.log("entro al like")
               likeFb(doc.id, user.email, uid);
             });
+
+
+
           });
         });
         const divTabs = divcanal.querySelector("#tabs");
 
         const formSendChannel = divcanal.querySelector("#formSendChannel");
         const messageCanal = divcanal.querySelector("#messageCanal");
+        const deleteChannelAdm =divcanal.querySelector("#spanDelete");
+        
 
+        // eliminar canal 
+        deleteChannelAdm.addEventListener("click", () =>{ 
+          deleteChannel(uid);
+        })
 
         formSendChannel.addEventListener("submit", (e) => {
           e.preventDefault();
