@@ -5,7 +5,7 @@ export const Comunidades = () => {
 
   <div class="input-group">
     <div class="form-outline">
-    <input type="search" placeholder=" Buscar" id='search'/>
+    <input type="search" placeholder=" Buscar..." id='search'/>
       <label><i class="fas fa-search"></i></label>
     </div>
   </div>
