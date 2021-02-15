@@ -8,30 +8,6 @@ export const displayChannel = (uidComunidad) => {
       .then((querySnapshot) => {
         nombreCanal.innerHTML = querySnapshot.data().nombreComunidad;
       });
-
-    // firebase.firestore()
-    //   .collection(`comunidades/${uidComunidad}/mensaje`)
-    //   .onSnapshot((query) => {
-    //     bodyCanal.innerHTML = "";
-    //     query.forEach((doc) => {
-    //       idUserMessage = `${doc.data().idUsuario}`;
-    //       bodyCanal.innerHTML += /*html*/`
-    //         <div class="list-group-item  ">
-    //           <div class="d-flex w-100 justify-content-between">
-    //             <h5 class="mb-1 " id="nameProfileChannel">${doc.data().idUsuario}</h5>
-    //             <small>${doc.data().fecha}</small>
-    //           </div>
-    //           <p class="mb-1">${doc.data().mensaje}</p>
-    //           <div class="d-flex justify-content-around">
-    //           <button class="btn"><i class="fas fa-thumbs-up "></i> Me gusta</button>
-    //           <button class="btn" ><i class="fas fa-comment-alt"></i> Responder</div></button>
-    //         </div>   
-       
-    //     `;
-    //   });
-    //   getProfile(idUserMessage);
-    // });
-      
 }; 
   
   
@@ -56,6 +32,7 @@ export const saveMessage = (message, date, uidComunidad, correoUser, idUser) => 
 };
 
 
+// Funcion obtener la foto y el nombre de la persona que posteo 
 export const getProfile = (idUserMessage, idDocument, photoDocument) => {
   firebase.firestore()
   .collection('perfil')
@@ -71,14 +48,16 @@ export const getProfile = (idUserMessage, idDocument, photoDocument) => {
 
 
 // Funcion para cambiar el numero y el color del Like
-const numberLikeUpdate = (idPost, newValue, oldValue) => {
-  const numberLike = document.getElementById(`numberLike-${idPost}`);
-  numberLike.innerHTML = String(newValue);
-  const getHeart = document.getElementById(`heartColor-${idPost}`);
+const numberLikeUpdate = (id, newValue, oldValue) => {
+  const likeIcon = document.getElementById(`iconLike-${id}`)
+  const likeButton = document.getElementById(`buttonLike-${id}`)
+  console.log('likeIcon', likeIcon)
+  likeButton.innerHTML = `<i class="fas fa-thumbs-up "></i>  Me gusta ${newValue}`;
+  const getHeart = document.getElementById(`heartColor-${id}`);
   if (newValue > oldValue) {
-    getHeart.innerHTML = heartGreen;
+    likeButton.style.color = '#009DDC';
   } else {
-    getHeart.innerHTML = heartWhite;
+    likeButton.style.color = '#212529';
   }
 };
 
@@ -92,7 +71,7 @@ export const likeFb = (id, email, uidComunidad) => {
     .get()
     .then((query) => {
       const message = query.data();
-      // const oldValue = post.like.length;
+      const oldValue = message.meGusta.length;
       if (message.meGusta.includes(email)) {
         for (let i = 0; i < message.meGusta.length; i += 1) { // recorre el array del like
           if (message.meGusta[i] === email) { // verifica si ya el usuario está en el array
@@ -117,7 +96,7 @@ export const likeFb = (id, email, uidComunidad) => {
             meGusta: message.meGusta,
         });
       }
-      // numberLikeUpdate(id, message.meGusta.length, oldValue);
+      numberLikeUpdate(id, message.meGusta.length, oldValue);
     })
     .catch(() => {
     });

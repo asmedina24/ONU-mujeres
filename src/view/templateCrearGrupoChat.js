@@ -12,26 +12,28 @@ export const crearGrupoChat = () => {
 </header>
  
   
-  <div class="container">
+<div class="container">
 
 <form id="formularioCrear" class="form">
   <div class="form-group">
-    <label for="exampleInputEmail1">Nombre del Grupo</label>
-    <input type="text" class="form-control" id="nombre" aria-describedby="NameHelp">
+    <label for="exampleInputEmail1">Nombre</label>
+    <input type="text" class="form-control" id="nombre" aria-describedby="NameHelp" placeholder="ej:  (#Santiago-biblioredes) ">
     
   </div>
   <div class="form-group">
-   
+    <label for="exampleInputPassword1">Descripción (opcional)</label>
+    <input type="text" class="form-control" id="descripcion" placeholder="Estudiantes de la generacion 15, comparte contenidos">
   </div>
   <div class="form-group form-check">
     
-    <label class="form-check-label" for="exampleCheck1">Crear Grupo </label>
+    <label class="form-check-label" for="exampleCheck1">Compartir esta comunidad</label>
     <input type="checkbox" class="" id="estado">
   </div>
 
 </form>
    </div>
-      `; //   <button type="submit" class="btn btn-primary" id="btn">crear</button>
+      `; 
+      
   divCreateComunity.innerHTML = viewCreateComunity;
   const formulario = divCreateComunity.querySelector("#formularioCrear");
   const nombre = divCreateComunity.querySelector("#nombre");
@@ -54,11 +56,13 @@ export const crearGrupoChat = () => {
         -2
       )}`;
       //condicionamos que si el valor del nombre del canal y la descripción es distinto de vacio guardamos.
-      if (nombre.value != "" ) {
-        chat.guardarGrupoChat(nombre, valorEstado, fecha);
-       
+      if (nombre.value != "" && descripcion.value != "") {
+        // comunidad.guardarComunidad(nombre, descripcion, valorEstado, fecha);
+      
+        chat.guardarGrupoChat(nombre, descripcion, valorEstado, fecha);
+        window.location.hash = "#/wall";
       }
-    },
+     },
     false
   );
   return divCreateComunity;
