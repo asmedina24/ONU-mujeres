@@ -52,11 +52,15 @@
     .transtale{
       display: flex;
       justify-content: center;
-      margin: 10px 10px 10px -24px;
+      margin: 11px -21px 10px -24px;
     }
     .selectTranslate{
         display: flex;
         justify-content: center;
+    }
+
+    a.gflag{
+        margin: 4px;
     }
 
 }
