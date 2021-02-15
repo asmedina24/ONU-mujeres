@@ -1,55 +1,72 @@
 @media (min-width : 320px) and (max-width: 768px) {
 
     .logoHome{
-        margin-top: 50px;
+        margin: 33px 22px 0px 65px;
+        width: 147px;
+        height: 44px;
+    }
+    #logIn1{
+        margin: 5px 42px -17px 179px;
     }
 
+    #logIn1 a { 
+        margin-left: 37px;
+    }
+    
+    #logIn2{
+        margin: -41px 5px -2px 1px;
+    }
+
+    #logIn2 ul {
+        margin-left: 23px;
+    }
+
+    h5{
+        font-size: 10px;
+        font-family: Roboto;
+    }
+    
     .carousel-indicators li{
         background-color: #4D8FC2;
-
-    }
-
-    .logoHome{
-        margin: -8px 19px 0px 56px;
-        width: 200px;
-        height: 69px;
-    }
-
-
+    }    
     .carousel-inner{
-        margin-top: 1px;
+        width: 213px;
+        height: 365px;
     }
-
     .carousel{
         position: inherit;
     }
-
-    .carousel.pointer-event{
-        margin-top: 3px;
+    .carousel-item active {
     }
-
+    
+    .carousel.pointer-event{
+    }
     .carousel slide{
         margin: 10px;
     }
-    
     #btnStart{
-        margin: 8px 0px 0px 111px;
+        margin: 11px 32px 8px 86px;
         font-family: Roboto;
         font-size: 14px;
         color: #FEFEFE;
-        line-height: 16px;
+        line-height: 5px;
         background: #4D8FC2;
         border: 1px solid #D8D8D8;
         box-sizing: border-box;
         border-radius: 4px;
         width: 115px;
-        height: 36px;
+        height: 26px;
         left: 123px;
         top: 498px;
-        
-
     }
-
-
+    .transtale{
+      display: flex;
+      justify-content: center;
+      margin: 10px 10px 10px -24px;
+    }
+    .selectTranslate{
+        display: flex;
+        justify-content: center;
+    }
 
 }

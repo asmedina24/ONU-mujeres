@@ -26,7 +26,7 @@ export const editProfile = () => {
     let instagram = '';
     let facebook = '';
     let aboutMe = '';
-    let photo = `<img src="Imagenes/icono-avatar-photo.png" class="img-post" id="filePost"></img>`
+    let photo = `<img src="Imagenes/profile-image.svg" class="img-post" id="filePost"></img>`
     let id;
   
     querySnapshot.forEach((doc) => {
@@ -74,18 +74,15 @@ export const editProfile = () => {
           </div>
           <div class="label-profile">
             <label for="instagramProfile" class="label-instagram">Instagram</label> 
-            <input type="text" class="profile" id="instagramProfile" value="${instagram}" />
-            <p class="inf-input-instagram">Escribe tu usuario de Instagram</p>
+            <input type="text" class="profile" id="instagramProfile" value="${instagram}" placeholder="Escribe tu usuario de Instagram" />
           </div>
           <div class="label-profile">
             <label for="facebookProfile" class="label-facebook">Facebook</label> 
-            <input type="text" class="profile" id="facebookProfile" value="${facebook}" />
-            <p class="inf-input-facebook">Escribe tu usuario de Facebook</p>
+            <input type="text" class="profile" id="facebookProfile" value="${facebook}" placeholder="Escribe tu usuario de Facebook" />
           </div>
           <div class="label-profile">
             <label for="aboutMeProfile" class="label-aboutMe">Sobre mi</label> 
-            <input type="text" class="profile" id="aboutMeProfile"value="${aboutMe}" />
-            <p class="inf-input-me">Cuentanos algo sobre ti</p>
+            <input type="text" class="profile" id="aboutMeProfile"value="${aboutMe}" placeholder="Cuentanos algo sobre ti" />
           </div>
             <button type="submit" class="btn-profile" id="btnProfile">Siguiente</button>
         </form>
@@ -100,7 +97,6 @@ export const editProfile = () => {
   image.onchange = () => {
     const file = image.files[0];
     const reader = new FileReader();
-    // uploadedImage.src= '';
     // Recibira el valor Base64 cada vez que un usuario seleccione un archivo de su dispositivo
     reader.onloadend = () => { // El evento loadend es emitido cuando la carga se ha detenido
       imgb64 = reader.result;
