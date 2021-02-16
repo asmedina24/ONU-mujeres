@@ -42,7 +42,7 @@ export const menu =()=>{
       firebase.firestore().collection('perfil').where('email', '==', uid).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           const containerRoot = document.getElementById('root2');
-          containerRoot.innerHTML = `
+          containerRoot.innerHTML = /*html*/`
           <header>
           <button class="botonMenu">
           <i class="fa fa-bars"></i>  
@@ -51,10 +51,11 @@ export const menu =()=>{
     <!--   Los links -->
       <nav class="principal">
           <ul>
-             
-              <li><a href="#/profile"><i class="fa fa-user" aria-hidden="true"></i> ${doc.data().email} ${doc.data().name}</a></li>
+              <li><img src="${doc.data().photo}" class="img-menu" id="imgPost"></li>
+              <li><a href="#/profile"> ${doc.data().name} ${doc.data().email}</a></li>
+              <hr class="hr">
               <li><a href="#/profile">Editar Perfil  </a></li>
-              <li class="principales" id="cerrarSesion"> <i class="fas fa-sign-out-alt"></i> Cerrar </li>
+              <li class="principales" id="cerrarSesion"> <i class="fas fa-sign-out-alt"></i> Cerrar Sesión </li>
           </ul>
       </nav>
      <p class="titulo">Tu Oportunidad</p>

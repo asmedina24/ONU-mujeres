@@ -75,7 +75,7 @@ export const canal = (uid) => {
             <div class="d-flex w-100 justify-content-between">
               <div id=divName>
               <h5 class="mb-1 " id="nameProfileChannel-${doc.id}"></h5>
-              <small>${doc.data().fecha}</small>
+              <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
               </div>
             </div>
             <p class="mb-4">${doc.data().mensaje}</p>

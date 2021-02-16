@@ -265,6 +265,37 @@ padding-left: 10px;}
       padding: 0%;
   }
 
+ .d-flex{
+    align-items: center;
+ }
+ .imgChat{
+    width: 40px;
+    border-radius: 60%;
+ }
+ .div-img-chat{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+ }
+ .name-chat{
+    position: absolute;
+    margin-left: 164px;
+ }
+
+ .hr{
+    background: white;
+    width: 93%;
+ }
+
+ .img-menu{
+    width: 50px;
+    height: 50px;
+    border-radius: 150px;
+    margin-left: 8%;
+    margin-top: 4%;
+ }
 }
 
 

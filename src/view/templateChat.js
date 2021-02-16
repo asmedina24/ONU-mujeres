@@ -31,6 +31,7 @@ export const Chat = () => {
 
 
       divChat.innerHTML = viewChat;
+      
       firebase.auth().onAuthStateChanged((user) => {
           const idUSer = user.uid;
           const emailUSer = user.email;
@@ -42,7 +43,7 @@ export const Chat = () => {
 
 
           
-        chat.mostrarChat();
+        chat.mostrarChat(user.email);
                   
        });       
    return divChat;
