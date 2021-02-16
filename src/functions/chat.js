@@ -1,29 +1,45 @@
 const chat = {
-  mostrarChat: () => {
+  mostrarChat: (user) => {
     const contenidoProtegido = document.querySelector("#contenidoprotegido");
- 
-    firebase.firestore().collection('chat').orderBy('fecha', 'desc').onSnapshot((query) => {
-      contenidoProtegido.innerHTML = "";
+    
+    firebase.firestore().collection('Chats')
+    .where('usuarios', 'array-contains', user)
+    .onSnapshot((query) => {
+      contenidoProtegido.innerHTML='';
       query.forEach(doc => {
-             contenidoProtegido.innerHTML += `
-              <a href="#/posteoChat?${doc.id}" class="list-group-item list-group-item-action ">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 ">${doc.data().nombreComunidad}</h5>
-                <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
-              </div>
-              <p class="mb-1">${doc.data().descripcion}</p>
-              <p class="mb-1">${doc.data().img}</p>
-                        
-            </a>`;
-        //  contenidoProtegido.scrollTop = contenidoProtegido.scrollHeight;
-      });
+      const pareja = (doc.data().usuarios[1]=== user)? doc.data().usuarios[0]:doc.data().usuarios[1]
+        firebase.firestore().collection('perfil')
+        .where('email', '==', pareja)
+        .onSnapshot((perfil) => {
+          perfil.forEach((datos)=>{
+            const profilePhotoIcon = `<img src="../Imagenes/iconchat.png" id="filePost" class="imgChat"></img>`
+            const profilePhoto = `<img src="${datos.data().photo}" class="imgChat"></img>`;
+      
+            contenidoProtegido.innerHTML += `
+            <a href="#/initchat?${datos.data().email}" class="list-group-item list-group-item-action ">
+            <div class="d-flex w-100 justify-content-between">
+              <div class = "div-img-chat">
+                 ${datos.data().photo === '' ? profilePhotoIcon : profilePhoto}
+
+              </div> 
+                <h5 class="name-chat ">${datos.data().name}</h5>
+            </div>
+          
+                      
+          </a>`;
+
+          });
+         
+        });
+         
+      }); ;
     });
 
   },
 
   mostrarChatUnico: (email) => {
     const contenidoprotegidoChat = document.querySelector("#contenidoprotegidoChat");
-    let gri = firebase.firestore().collection('Chats')
+    firebase.firestore().collection('Chats')
       .where('usuarios', 'array-contains', email)
       .get().then((querySnapshot) => {
         // console.log(querySnapshot.docs);
@@ -33,8 +49,9 @@ const chat = {
             .onSnapshot((query) => {
               contenidoprotegidoChat.innerHTML = "";
               query.forEach(doc => {
-                // console.log(doc.id);
+                 console.log(doc.id);
                 if (doc.data().sender === email) {
+                  console.log('entro al if de mostrar');
                   contenidoprotegidoChat.innerHTML +=
                     ` <div class="derecha" >
                 <span class=""> ${doc.data().mensaje}</span>
