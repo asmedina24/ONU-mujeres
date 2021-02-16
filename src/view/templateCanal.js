@@ -81,7 +81,7 @@ export const canal = (uid) => {
             <p class="mb-4">${doc.data().mensaje}</p>
             <div class="d-flex justify-content-around">
               ${doc.data().meGusta.includes(emailUSer) ? likeColorBlue : likeColorBlack}
-              <button class="btn btn-small-font" ><i class="fas fa-comment-alt"></i> Responder</div></button>
+              <button class="btn btn-small-font btn-respoder" ><i class="fas fa-comment-alt"></i> Responder</div></button>
             </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ export const canal = (uid) => {
         });
         displayChannel(uid);
 
-        // document.getElementById("CardBody").scrollTo(0, document.getElementById("cardCanal").scrollHeight)
+        document.getElementById("CardBody").scrollTo(0, document.getElementById("cardCanal").scrollHeight)
       });
     }
     postWall(uid)

@@ -229,19 +229,15 @@ padding-left: 10px;}
       
   }
   .dropdown-menu.show {
-    display: block;
-    top: 65px !important;
+    /* display: block; */
+    top: 93px !important;
     left: 1px !important;
     will-change: transform;
     bottom: -165px;
-    width: 315px;
-    height: 145px;
-    margin-top: 72px;
+    width: 320px;
+    height: 112px;
   }
   
-  .dropup .dropdown-menu {
-      
-  }
 
   .fa-paperclip {
     padding: 4px;
@@ -295,6 +291,10 @@ padding-left: 10px;}
     border-radius: 150px;
     margin-left: 8%;
     margin-top: 4%;
+ }
+
+ .btn-respoder{
+    padding-right: 0;
  }
 }
 

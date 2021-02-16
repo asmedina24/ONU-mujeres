@@ -54,7 +54,7 @@ export const menu =()=>{
               <li><img src="${doc.data().photo}" class="img-menu" id="imgPost"></li>
               <li><a href="#/profile"> ${doc.data().name} ${doc.data().email}</a></li>
               <hr class="hr">
-              <li><a href="#/profile">Editar Perfil  </a></li>
+              <li><a href="#/profile"><i class="fa fa-user" aria-hidden="true"></i> Editar Perfil </a></li>
               <li class="principales" id="cerrarSesion"> <i class="fas fa-sign-out-alt"></i> Cerrar Sesión </li>
           </ul>
       </nav>
