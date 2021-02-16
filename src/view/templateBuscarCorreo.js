@@ -22,32 +22,21 @@ export const buscarCorreo = () => {
          `;
   divbuscarCorreo.innerHTML = viewbuscarCorreo;
   const buscarCorreoid = divbuscarCorreo.querySelector("#buscarCorreo");
-  //  console.log(buscarCorreoid); 
-  // let search = divbuscarCorreo.querySelector("#search");
-  // let searchboton = divbuscarCorreo.querySelector("#boton");
-  // searchboton.addEventListener("click", myFunction)
-
-
+  
   firebase.firestore().collection('perfil').onSnapshot((query) => {
     buscarCorreoid.innerHTML = "";
     query.forEach((doc) => {
 
       // <a href="#/initchat?${doc.data().email}" class="list-group-item list-group-item-action ">
-      buscarCorreoid.innerHTML += `    
-         <div id="div_${doc.id}" class="d-flex w-100 justify-content-between">
+      buscarCorreoid.innerHTML += `  <div class="card canal">
+         <div id="div_${doc.id}" class="d-flex w-100 ">
+         <img src="${doc.data().photo}" class=" imgg" >
          <h5 id="nombre${doc.id}" class="mb-1 ">${doc.data().name}</h5>
-         <p  id="email${doc.id}"> ${doc.data().email}</p>
+         </div>
          </div>`;
 
 
-      // console.log(doc.data());
-      // console.log(111, doc.data().email)
-      // console.log(222, `nombre${doc.id}`);
-      // console.log(333, doc.data().uid);
-
-
-      //  chat.guardarColeccionChart(`nombre${doc.id}`, doc.data().uid)
-    });
+      });
 
     firebase.auth().onAuthStateChanged((user) => {
       query.forEach((doc) => {

@@ -39,9 +39,7 @@ export const posteoChat = (uid) => {
 
    //obtiene el usuario actual de Auth .
   firebase.auth().onAuthStateChanged((user) => {
-    //console.log(user);
-
-    formulario.addEventListener("submit", (e) => {
+     formulario.addEventListener("submit", (e) => {
       e.preventDefault();
       const name = user.displayName;
       const img = user.photoURL;
