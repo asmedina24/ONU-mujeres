@@ -37,44 +37,36 @@ const chat = {
 
   },
 
-  mostrarChatUnico: (email) => {
+  mostrarChatUnico: (email, doc) => {
     const contenidoprotegidoChat = document.querySelector("#contenidoprotegidoChat");
-    firebase.firestore().collection('Chats')
-      .where('usuarios', 'array-contains', email)
-      .get().then((querySnapshot) => {
-        // console.log(querySnapshot.docs);
-        // console.log(querySnapshot);
-        querySnapshot.forEach((doc) => {
-          firebase.firestore().collection(`Chats/${doc.id}/mensajes`)
-            .onSnapshot((query) => {
-              contenidoprotegidoChat.innerHTML = "";
-              query.forEach(doc => {
-                 console.log(doc.id);
-                if (doc.data().sender === email) {
-                  console.log('entro al if de mostrar');
-                  contenidoprotegidoChat.innerHTML +=
-                    ` <div class="derecha" >
-                <span class=""> ${doc.data().mensaje}</span>
-                <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
-                
-                </div>
-                `;
+    firebase.firestore().collection(`Chats/${doc.id}/mensajes`)
+    .onSnapshot((query) => {
+      contenidoprotegidoChat.innerHTML = "";
+      query.forEach(doc => {
+         console.log(doc.id);
+        if (doc.data().sender === email) {
+          console.log('entro al if de mostrar');
+          contenidoprotegidoChat.innerHTML +=
+            ` <div class="derecha" >
+        <span class=""> ${doc.data().mensaje}</span>
+        <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
+        
+        </div>
+        `;
 
-                } else {
-                  contenidoprotegidoChat.innerHTML += ` <div class="izquierda">
-                <span class=""> ${doc.data().mensaje}</span>
-                
-                <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
-               
-                  </div>`;
+        } else {
+          contenidoprotegidoChat.innerHTML += ` <div class="izquierda">
+        <span class=""> ${doc.data().mensaje}</span>
+        
+        <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
+       
+          </div>`;
 
-                }
+        }
 
-                // console.log(doc.data());
-              });
-            });
-        });
+        // console.log(doc.data());
       });
+    });
 
 
     // .collection('mensajes')

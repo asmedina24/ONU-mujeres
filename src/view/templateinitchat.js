@@ -55,7 +55,7 @@ export const initchat = (email) => {
                                           e.preventDefault();
                                           chat.guardarChatUnit(answerChat, fecha, uid, docID);
                                         });
-                                        chat.mostrarChatUnico(email);     
+                                        chat.mostrarChatUnico(email,doc);     
                                     }
                                   });
                               });
