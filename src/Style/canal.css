@@ -58,4 +58,18 @@
     font-size: 12px;
 }
 
+.likeCanal{
+    padding-left: 0 !important;
+}
+
+#divSubmit{
+    display: flex;
+}
+
+#clip {
+    padding: 11px 0px;
+}
+
+
+
 }

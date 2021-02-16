@@ -1,22 +1,20 @@
 
 import chat from "../functions/chat.js"
-export const initchat = (email, name) => {
-  const divChatUnit = document.createElement("div");
+
+export const chatMasivo = () => {
+  const divChatMasivo = document.createElement("div");
   
-  firebase.firestore().collection('perfil').onSnapshot((query) => {
-    query.forEach((doc) => {
-      if (email === doc.data().email){
-        const viewChatUnit = ` 
+        const viewChatUnit = /*html*/` 
         <header class="d-flex justify-content align-items-center">
         <!-- Nuestro botón. para volver y crear -->
         <a href="#/wall" class="btn " >  <i class="fa fa-chevron-left text-white"></i>  </a>
-        <div id="header-title" class="principales "> ${doc.data().name} </div>
+        <div id="header-title" class="principales "> Mensaje Masivo </div>
       
          </header>
       
         <div class="card canal">
         <div class="card-body">
-           <div id="contenidoprotegidoChat"></div>
+           <div id="contenidoprotegidoChatMasivo"></div>
              
               </div>
               </div>
@@ -26,7 +24,7 @@ export const initchat = (email, name) => {
                     <input type="text" placeholder="Enviar mensaje" class="form-control" id="answerChat">
                   </div>
                   <div class="col-3">
-                    <button id="btnformulario" class="btn-clip" type="submit"><i class="fa fa-paperclip aria-hidden="true"" ></i></i><i class="fas fa-play"></i></button>
+                    <button id="btnformulario" class="btn-clip" type="submit"><i class="fa fa-paperclip" aria-hidden="true"></i><i class="fas fa-play"></i></button>
                   </div>
                </div>
               </form>
@@ -34,17 +32,9 @@ export const initchat = (email, name) => {
                `;
       
       
-        divChatUnit.innerHTML = viewChatUnit;
-        const formulario = divChatUnit.querySelector("#formulario");
-        const answerChat = divChatUnit.querySelector("#answerChat");
-      
-        firebase.firestore().collection('Chats')
-          .where('usuarios', 'array-contains', email)
-          .get()
-          .then((querySnapshot) => {
-            let docID;
-            querySnapshot.forEach((doc) => {
-              docID = doc.id;
+        divChatMasivo.innerHTML = viewChatUnit;
+        const formulario = divChatMasivo.querySelector("#formulario");
+        const answerChat = divChatMasivo.querySelector("#answerChat");
       
               firebase.auth().onAuthStateChanged((user) => {
                 const uid = user.email;
@@ -54,19 +44,18 @@ export const initchat = (email, name) => {
                 const fecha = `${(`00${date.getDate()}`).slice(-2)}/${(`00${date.getMonth() + 1}`).slice(-2)}/${date.getFullYear()} ${(`00${date.getHours()}`).slice(-2)}:${(`00${date.getMinutes()}`).slice(-2)}:${(`00${date.getSeconds()}`).slice(-2)}`;
       
                 formulario.addEventListener('submit', (e) => {
-                  console.log("tengo click");
                   e.preventDefault()
-                  chat.guardarChatUnit(answerChat, fecha, uid, docID);
+                  chat.guardarChatMasivo(answerChat, fecha, uid);
       
                 });
-                chat.mostrarChatUnico(email);
+                chat.mostrarChatMasivo();
               })
-            })
-          });
-      }
+        //     })
+        //   });
+//       }
 
-    });
-  });  
+//     });
+//   });  
   
-  return divChatUnit;
+  return divChatMasivo;
 };
