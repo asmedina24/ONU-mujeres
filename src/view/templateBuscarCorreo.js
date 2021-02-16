@@ -22,7 +22,8 @@ export const buscarCorreo = () => {
          `;
   divbuscarCorreo.innerHTML = viewbuscarCorreo;
   const buscarCorreoid = divbuscarCorreo.querySelector("#buscarCorreo");
-  
+
+
   firebase.firestore().collection('perfil').onSnapshot((query) => {
     buscarCorreoid.innerHTML = "";
     query.forEach((doc) => {
@@ -30,7 +31,7 @@ export const buscarCorreo = () => {
       // <a href="#/initchat?${doc.data().email}" class="list-group-item list-group-item-action ">
       buscarCorreoid.innerHTML += `  <div class="card canal">
          <div id="div_${doc.id}" class="d-flex w-100 ">
-         <img src="${doc.data().photo}" class=" imgg" >
+         <img src="${doc.data().photo}" class="imgg" >
          <h5 id="nombre${doc.id}" class="mb-1 ">${doc.data().name}</h5>
          </div>
          </div>`;
@@ -66,8 +67,6 @@ export const buscarCorreo = () => {
 
           }) 
 
-          // window.location = `#/initchat?${doc.data().email}`
-          // chat.guardarColeccionChart(uid, doc.data().email)
         })
       });
     });

@@ -7,7 +7,7 @@ export const crearComunidades = () => {
   <header class="d-flex justify-content-between align-items-center">
 <!-- Nuestro botón. para volver y crear -->
  <a href="#/wall" class="btn " >  <i class="fa fa-chevron-left text-white"></i>  </a>
-   <p class="titulo">Nueva Comunidad</p>
+   <p class="tituloNuevaComunidad">Nueva Comunidad</p>
   <button type="" class="btn  text-white" id="btnCrear"> Crear </button>
 </header>
  
@@ -16,13 +16,12 @@ export const crearComunidades = () => {
 
 <form id="formularioCrear" class="form">
   <div class="form-group">
-    <label for="exampleInputEmail1">Nombre</label>
+    <label class="nombreComunidad" for="exampleInputEmail1">Nombre</label>
     <input type="text" class="form-control" id="nombre" aria-describedby="NameHelp" placeholder="ej:  (#Santiago-biblioredes) ">
-    
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Descripción (opcional)</label>
-    <input type="text" class="form-control" id="descripcion" placeholder="Estudiantes de la generacion 15, comparte contenidos">
+    <label class="descripcionCommunidad"  for="exampleInputPassword1">Descripción (opcional)</label>
+    <input type="text" class="form-control" id="descripcion" placeholder="¿De que se trata éste canal?">
   </div>
   <div class="form-group form-check">
     
@@ -32,14 +31,15 @@ export const crearComunidades = () => {
 
 </form>
    </div>
-      `; //   <button type="submit" class="btn btn-primary" id="btn">crear</button>
+      `; 
   divCreateComunity.innerHTML = viewCreateComunity;
   const formulario = divCreateComunity.querySelector("#formularioCrear");
   const nombre = divCreateComunity.querySelector("#nombre");
   const descripcion = divCreateComunity.querySelector("#descripcion");
   const estado = divCreateComunity.querySelector("#estado");
   const btnCrear = divCreateComunity.querySelector("#btnCrear");
-//le damos la funcionalidad al boton crear
+
+  //le damos la funcionalidad al boton crear
   btnCrear.addEventListener(
     "click",
     () => {

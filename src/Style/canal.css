@@ -26,11 +26,11 @@
 #divName{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-right: 2%;
 }
 
-#headerPost p {
-    /* padding-left: 61px */
-}
 
 #delete {
     position: absolute;

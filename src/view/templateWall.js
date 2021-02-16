@@ -6,10 +6,10 @@ export const wall = () => {
      </div>
     <div class="selection">
       <div class="button-selection" id="btnComunidad">
-        <p>COMUNIDAD</p>
+        <p class="CabeceraComunidad">COMUNIDAD</p>
       </div>
       <div class="button-selection" id="btnChat">
-      <p>CHATS</p>
+      <p class="cabeceraChats">CHATS</p>
       </div>
       </div>
         <div class="Tab" id="tabs">

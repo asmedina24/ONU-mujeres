@@ -111,7 +111,7 @@ export const editProfile = () => {
 
 
   buttonEditProfile.addEventListener('submit', (e) => {
-    e.preventDefault(); // cancela el evento, significa que la acción predeterminada no ocurrirá.
+    e.preventDefault(); 
     const nameProfile = divEditProfile.querySelector('#nameProfile').value;
     const fullNameProfile = divEditProfile.querySelector('#fullNameProfile').value;
     const cityProfile = divEditProfile.querySelector('#cityProfile').value;
