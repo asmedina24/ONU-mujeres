@@ -27,8 +27,7 @@ export const posteoChat = (uid) => {
         </form>
     </div>
 </div>
-     
-    
+      
         `;
 
   divcanal.innerHTML = viewCanal;

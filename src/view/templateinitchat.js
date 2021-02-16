@@ -25,7 +25,7 @@ export const initchat = (email) => {
                                       <header class="d-flex justify-content align-items-center">
                                       <!-- Nuestro botón. para volver y crear -->
                                       <a href="#/wall" class="btn " >  <i class="fa fa-chevron-left text-white"></i>  </a>
-                                      <div id="header-title" class="principales ">  ${datos.data().name} </div>
+                                      <div id="header-title" class="principales "> <i class="fa fa-bullseye"></i>  ${datos.data().name} </div>
                                     
                                       </header>
                                     

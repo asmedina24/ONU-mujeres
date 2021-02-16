@@ -221,28 +221,6 @@ const chat = {
       });
   },
 
-  // mostrarChatMasivo: () => {
-  //   const contenidoProtegido = document.querySelector("#contenidoprotegido");
- 
-  //   firebase.firestore().collection('ChatMasivo').orderBy('fecha', 'desc').onSnapshot((query) => {
-  //     contenidoProtegido.innerHTML = "";
-  //     query.forEach(doc => {
-  //            contenidoProtegido.innerHTML += `
-  //             <a href="#/posteoChat?${doc.id}" class="list-group-item list-group-item-action ">
-  //             <div class="d-flex w-100 justify-content-between">
-  //               <h5 class="mb-1 ">${doc.data().nombreComunidad}</h5>
-  //               <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
-  //             </div>
-  //             <p class="mb-1">${doc.data().descripcion}</p>
-  //             <p class="mb-1">${doc.data().img}</p>
-                        
-  //           </a>`;
-  //       //  contenidoProtegido.scrollTop = contenidoProtegido.scrollHeight;
-  //     });
-  //   });
-
-  // },
-
   mostrarChatMasivo: () => {
     const contenidoprotegidoChatMasivo = document.querySelector("#contenidoprotegidoChatMasivo");
     firebase.firestore()
@@ -261,9 +239,7 @@ const chat = {
                   `;
   
                 })
-  
-                  // console.log(doc.data());
-                });
+            });
               }
 
 };

@@ -360,6 +360,10 @@ padding-left: 10px;
  .btn-respoder{
     padding-right: 0;
  }
+ .fa-bullseye:before {
+    content: "\f140";
+    color: aqua;
+}
 }
 
 
