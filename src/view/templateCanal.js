@@ -1,17 +1,30 @@
-import { saveMessage, displayChannel, getProfile, likeFb } from "../functions/canalDeComunidad.js";
+import { saveMessage, displayChannel, getProfile, likeFb, deleteChannel } from "../functions/canalDeComunidad.js";
 
 import { showTabs } from "../router.js";
 
 export const canal = (uid) => {
 
   const divcanal = document.createElement("div");
-  const viewCanal = /*html*/`  
-    <header class="d-flex justify-content align-items-center">
+   firebase.auth().onAuthStateChanged((user) => {
+    const idUSer = user.uid;
+    const emailUSer = user.email;
+
+
+    const opcionDelete = `<i class="fa fa-trash" id="delete" aria-hidden="true"></i>`
+    const emailAdministrador = 'onu@administradora.com';
+
+    const viewCanal = /*html*/`  
+    <header class="d-flex justify-content align-items-center" id="headerName">
       <!-- Nuestro botón. para volver y crear -->
       <a href="#/wall" class="btn " >  <i class="fa fa-chevron-left text-white"></i>  </a>
       <div id="header-title">
         <p class="tituloCanal" id='nombreCanal'></p>
         <p class="tituloCanal" id='miembros'>17 miembros</p>
+      </div>
+      <span id="spanDelete">
+      ${emailUSer === emailAdministrador ? opcionDelete : ''}
+      
+      </span>
     </header>
  
     <div class="card canal" id="cardCanal">
@@ -25,7 +38,8 @@ export const canal = (uid) => {
                   <div class="col-9">
                     <input type="text" placeholder="Enviar mensaje" class="form-control" id="messageCanal">
                   </div>
-                  <div class="col-3">
+                  <div class="col-3" id="divSubmit">
+                    <i class="fa fa-paperclip" aria-hidden="true" id="clip"></i>
                     <button class="btn" type="submit"><i class="fas fa-play"></i></button>
                   </div>
                 </div>
@@ -38,9 +52,7 @@ export const canal = (uid) => {
 
   const bodyCanal = divcanal.querySelector("#bodyCanal");
 
-  firebase.auth().onAuthStateChanged((user) => {
-    const idUSer = user.uid;
-    const emailUSer = user.email;
+ 
 
     const postWall = (uid) => {
       firebase.firestore()
@@ -51,8 +63,8 @@ export const canal = (uid) => {
         bodyCanal.innerHTML = "";
         query.forEach((doc) => {
           const idUserMessage = `${doc.data().idUsuario}`;
-          const likeColorBlue = `<button class="btn btn-small-font " id="buttonLike-${doc.id}" style="color: rgb(0, 157, 220)" ><i class="fas fa-thumbs-up" id="iconLike-${doc.id}"></i> Me gusta  ${doc.data().meGusta.length}</button>`
-          const likeColorBlack = `<button class="btn btn-small-font" id="buttonLike-${doc.id}" style="color: #212529" ><i class="fas fa-thumbs-up" id="iconLike-${doc.id}"></i> Me gusta  ${doc.data().meGusta.length}</button>`
+          const likeColorBlue = `<button class="btn btn-small-font likeCanal" id="buttonLike-${doc.id}" style="color: rgb(0, 157, 220)" ><i class="fas fa-thumbs-up" id="iconLike-${doc.id}"></i> Me gusta  ${doc.data().meGusta.length}</button>`
+          const likeColorBlack = `<button class="btn btn-small-font likeCanal" id="buttonLike-${doc.id}" style="color: #212529" ><i class="fas fa-thumbs-up" id="iconLike-${doc.id}"></i> Me gusta  ${doc.data().meGusta.length}</button>`
          
          bodyCanal.innerHTML += /*html*/`
           <div class="list-group-item " id="headerPost">
@@ -63,7 +75,7 @@ export const canal = (uid) => {
             <div class="d-flex w-100 justify-content-between">
               <div id=divName>
               <h5 class="mb-1 " id="nameProfileChannel-${doc.id}"></h5>
-              <small>${doc.data().fecha}</small>
+              <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
               </div>
             </div>
             <p class="mb-4">${doc.data().mensaje}</p>
@@ -88,13 +100,22 @@ export const canal = (uid) => {
               console.log("entro al like")
               likeFb(doc.id, user.email, uid);
             });
+
+
+
           });
         });
         const divTabs = divcanal.querySelector("#tabs");
 
         const formSendChannel = divcanal.querySelector("#formSendChannel");
         const messageCanal = divcanal.querySelector("#messageCanal");
+        const deleteChannelAdm =divcanal.querySelector("#spanDelete");
+        
 
+        // eliminar canal 
+        deleteChannelAdm.addEventListener("click", () =>{ 
+          deleteChannel(uid);
+        })
 
         formSendChannel.addEventListener("submit", (e) => {
           e.preventDefault();
