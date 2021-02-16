@@ -15,13 +15,14 @@
  }
  #flechaVolver{
    position: absolute;
-   top: -20px;
+   top: -28px;
    left: 15px;
    appearance: none;
    border: none;
    background-color: transparent !important;
    border-color: white;
    outline: none;
+
  }
  #btnEye{
     position: absolute;

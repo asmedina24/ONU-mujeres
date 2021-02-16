@@ -9,6 +9,7 @@ export const logIn = () => {
               <img src="../Imagenes/flecha.png" id="imgFlecha" alt="Logo">
             </button>
             <p class="header-login-p"> Iniciar Sesión </p> 
+          
         </div>
         <div class = "body-login">
           <img src="../Imagenes/Tu-oportunidad-logo.png" id="logoLogin" alt="Logo"> 
