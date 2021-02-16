@@ -12,9 +12,10 @@ export const initchat = (email) => {
                   .where('usuarios', 'array-contains', email)
                   .get()
                   .then((querySnapshot) => {
-                    let docID;
+                    let docID = '';
                     querySnapshot.forEach((doc) => {
                       docID = doc.id;
+                      console.log(docID)
                       const pareja = (doc.data().usuarios[1]=== uid)? doc.data().usuarios[0]:doc.data().usuarios[1]
                       firebase.firestore().collection('perfil')
                               .where('email', '==', pareja)
@@ -53,9 +54,9 @@ export const initchat = (email) => {
                                         formulario.addEventListener('submit', (e) => {
                                           console.log("tengo click");
                                           e.preventDefault();
-                                          chat.guardarChatUnit(answerChat, fecha, uid, docID);
+                                          chat.guardarChatUnit(answerChat, fecha, uid, docID, pareja);
                                         });
-                                        chat.mostrarChatUnico(email,doc);     
+                                        chat.mostrarChatUnico(email, doc, pareja);     
                                     }
                                   });
                               });

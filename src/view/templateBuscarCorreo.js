@@ -60,6 +60,7 @@ export const buscarCorreo = () => {
             firebase.firestore().collection('Chats').where('usuarios', 'in',  [[doc.data().email, uid]]).get().then((user2) => {
             console.log(user2.docs)
             console.log(777, user2.empty, uid, doc.data().email)
+            console.log(docChat.id);
             if(!user2.empty){
              console.log("Entro al if")
              window.location = `#/initchat?${doc.data().email}`

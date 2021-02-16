@@ -37,14 +37,14 @@ const chat = {
 
   },
 
-  mostrarChatUnico: (email, doc) => {
+  mostrarChatUnico: (mail, doc, pareja) => {
     const contenidoprotegidoChat = document.querySelector("#contenidoprotegidoChat");
-    firebase.firestore().collection(`Chats/${doc.id}/mensajes`)
+    firebase.firestore().collection(`Chats/${doc.id}/mensajes`).orderBy('fecha', 'asc')
     .onSnapshot((query) => {
       contenidoprotegidoChat.innerHTML = "";
       query.forEach(doc => {
          console.log(doc.id);
-        if (doc.data().sender === email) {
+        if (doc.data().sender === mail) {
           console.log('entro al if de mostrar');
           contenidoprotegidoChat.innerHTML +=
             ` <div class="derecha" >
@@ -69,42 +69,13 @@ const chat = {
     });
 
 
-    // .collection('mensajes')
-    // .onSnapshot((query) => {
-    //   contenidoprotegidoChat.innerHTML = "";
-    //   query.forEach(doc => {
-    //     console.log(doc.id);
-    //     if (doc.data().uid === uid) {
-    //       console.log(doc.data().uid);
-    //       contenidoprotegidoChat.innerHTML +=
-    //         ` <div class="derecha">
-    //         <span class=""> ${doc.data().texto}</span>
-    //         <span class=""> ${doc.data().fecha}</span>
-    //         <span class=""> ${doc.data().uid}</span>
-    //         </div>
-    //         `;
-
-    //     } else {
-    //       contenidoprotegidoChat.innerHTML += ` <div class="izquiera">
-    //         <span class=""> ${doc.data().texto}</span>
-    //         <span class=""> ${doc.data().fecha}</span>
-    //         <span class=""> ${doc.data().uid}</span>
-    //           </div>`;
-
-    //     }
-
-
-    // contenidoprotegidoChat.scrollTop = contenidoprotegidoChat.scrollHeight;
-    //   });
-
-    // });
-
   },
 
-  guardarChatUnit: (mensaje, fecha, sender, id) => {
+  guardarChatUnit: (mensaje, fecha, sender, id, pareja) => {
     firebase.firestore()
       .collection("Chats")
       .doc(id)
+      // .where('usuarios', '==', pareja)
       .collection('mensajes').add({
         mensaje: mensaje.value,
         sender: sender,
@@ -120,7 +91,7 @@ const chat = {
       });
   },
 
-  guardarColeccionChart: (sender, email) => {
+  guardarColeccionChart: (sender, email, doc) => {
     firebase.firestore().collection('Chats').add({
       canalChats: "",
       usuarios: [
