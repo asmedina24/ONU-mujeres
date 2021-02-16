@@ -28,12 +28,16 @@ export const buscarCorreo = () => {
     buscarCorreoid.innerHTML = "";
     query.forEach((doc) => {
 
-      buscarCorreoid.innerHTML += `    
-         <div id="div_${doc.id}" class="d-flex w-100 justify-content-between">
+      // <a href="#/initchat?${doc.data().email}" class="list-group-item list-group-item-action ">
+      buscarCorreoid.innerHTML += `  <div class="card canal">
+         <div id="div_${doc.id}" class="d-flex w-100 ">
+         <img src="${doc.data().photo}" class="imgg" >
          <h5 id="nombre${doc.id}" class="mb-1 ">${doc.data().name}</h5>
-         <p  id="email${doc.id}"> ${doc.data().email}</p>
+         </div>
          </div>`;
-    });
+
+
+      });
 
     firebase.auth().onAuthStateChanged((user) => {
       query.forEach((doc) => {

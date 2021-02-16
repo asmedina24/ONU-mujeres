@@ -40,11 +40,7 @@
     .carousel{
         position: inherit;
     }
-    /* .carousel-item active {
-    }
-    
-    .carousel.pointer-event{
-    } */
+  
     .carousel slide{
         margin: 10px;
     }

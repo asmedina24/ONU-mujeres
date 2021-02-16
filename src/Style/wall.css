@@ -283,6 +283,7 @@ padding-left: 10px;
     height: 112px;
   }
   
+    
 
   .fa-paperclip {
     padding: 4px;
@@ -333,7 +334,7 @@ padding-left: 10px;
  .hr-close{
     background: white;
     width: 93%;
-    margin-top: 350px
+    margin-top: 235px;
  }
 
  .img-menu{
@@ -343,10 +344,26 @@ padding-left: 10px;
     margin-left: 8%;
     margin-top: 4%;
  }
+ .imgg{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    margin-top: 5px;
+    padding: 12px;
+ }
+
+ 
 
  .btn-respoder{
     padding-right: 0;
  }
+ .fa-bullseye:before {
+    content: "\f140";
+    color: aqua;
+}
 }
 
 
