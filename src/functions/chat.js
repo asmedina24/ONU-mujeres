@@ -64,40 +64,8 @@ const chat = {
 
         }
 
-        // console.log(doc.data());
       });
     });
-
-
-    // .collection('mensajes')
-    // .onSnapshot((query) => {
-    //   contenidoprotegidoChat.innerHTML = "";
-    //   query.forEach(doc => {
-    //     console.log(doc.id);
-    //     if (doc.data().uid === uid) {
-    //       console.log(doc.data().uid);
-    //       contenidoprotegidoChat.innerHTML +=
-    //         ` <div class="derecha">
-    //         <span class=""> ${doc.data().texto}</span>
-    //         <span class=""> ${doc.data().fecha}</span>
-    //         <span class=""> ${doc.data().uid}</span>
-    //         </div>
-    //         `;
-
-    //     } else {
-    //       contenidoprotegidoChat.innerHTML += ` <div class="izquiera">
-    //         <span class=""> ${doc.data().texto}</span>
-    //         <span class=""> ${doc.data().fecha}</span>
-    //         <span class=""> ${doc.data().uid}</span>
-    //           </div>`;
-
-    //     }
-
-
-    // contenidoprotegidoChat.scrollTop = contenidoprotegidoChat.scrollHeight;
-    //   });
-
-    // });
 
   },
 
@@ -135,64 +103,6 @@ const chat = {
 
   },
   
-
-  // guardarColeccionChart: (sender, email) => {
-  //   firebase.firestore().collection('Chats').onSnapshot((query) => {
-  //   //  console.log(query);
-  //     query.forEach((doc) => {
-  //       if (doc.data().usuarios.includes(email) && doc.data().usuarios.includes(sender)) {
-  //         console.log('if')
-          
-  //     } else {
-  //        firebase.firestore().collection('Chats').add({
-  //           canalChats: "",
-  //           usuarios: [
-  //             sender,
-  //             email,
-  //           ],
-  //         }).then((res) => {
-  //           console.log('mensaje guardado, guardarColeccionChart');
-  //         }).catch((e) => {
-  //           console.log(e)
-  //        });
-  //      }
-  //     })
-      
-       
-  //   });
-  //   },
-
-
-  // guardarColeccionChart: (sender, email) => {
-  //   firebase.firestore().collection('Chats').onSnapshot((query) => {
-  //     console.log(query);
-  //     query.forEach((doc) => {
-  //        if(doc.exists === false) {
-  //         console.log(doc)
-  //         firebase.firestore().collection('Chats').add({
-  //           canalChats: "",
-  //           usuarios: [
-  //             sender,
-  //             email,
-  //           ],
-  //         }).then((res) => {
-  //           console.log('mensaje guardado, guardarColeccionChart');
-  //         }).catch((e) => {
-  //           console.log(e)
-  //         })
-             
-  //       }      
-  //         else if (doc.data().usuarios.includes(email) && doc.data().usuarios.includes(sender)) {
-  //             console.log('if')
-  //         } 
-          
-  //       })
-      
-       
-  //   });
-  
-
-  // },
 
   guardarChart: (name, answerChat, uid, fecha, img) => {
     firebase.firestore().collection('chat').add({
@@ -241,7 +151,6 @@ const chat = {
     firebase.firestore().collection('chat').onSnapshot((query) => {
       bodyCanal.innerHTML = "";
       query.forEach((doc) => {
-        // console.log(doc.data());
         bodyCanal.innerHTML += `
         <div class="list-group-item  ">
           <div class="d-flex w-100 justify-content-between">
@@ -309,28 +218,6 @@ const chat = {
       });
   },
 
-  // mostrarChatMasivo: () => {
-  //   const contenidoProtegido = document.querySelector("#contenidoprotegido");
- 
-  //   firebase.firestore().collection('ChatMasivo').orderBy('fecha', 'desc').onSnapshot((query) => {
-  //     contenidoProtegido.innerHTML = "";
-  //     query.forEach(doc => {
-  //            contenidoProtegido.innerHTML += `
-  //             <a href="#/posteoChat?${doc.id}" class="list-group-item list-group-item-action ">
-  //             <div class="d-flex w-100 justify-content-between">
-  //               <h5 class="mb-1 ">${doc.data().nombreComunidad}</h5>
-  //               <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
-  //             </div>
-  //             <p class="mb-1">${doc.data().descripcion}</p>
-  //             <p class="mb-1">${doc.data().img}</p>
-                        
-  //           </a>`;
-  //       //  contenidoProtegido.scrollTop = contenidoProtegido.scrollHeight;
-  //     });
-  //   });
-
-  // },
-
   mostrarChatMasivo: () => {
     const contenidoprotegidoChatMasivo = document.querySelector("#contenidoprotegidoChatMasivo");
     firebase.firestore()
@@ -339,7 +226,6 @@ const chat = {
     .onSnapshot((query) => {
                 contenidoprotegidoChatMasivo.innerHTML = "";
                 query.forEach(doc => {
-                  // console.log(doc.id);
                     contenidoprotegidoChatMasivo.innerHTML +=
                       ` <div class="derecha" >
                   <span class=""> ${doc.data().mensaje}</span>
@@ -349,8 +235,6 @@ const chat = {
                   `;
   
                 })
-  
-                  // console.log(doc.data());
                 });
               }
 

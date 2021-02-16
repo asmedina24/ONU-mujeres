@@ -25,8 +25,7 @@ export const wall = () => {
   const btnComunidad = divWall.querySelector("#btnComunidad");
   const btnChat = divWall.querySelector("#btnChat");
     
-  /* Event Listeners */
-  // toggle.addEventListener("click", toggleMenu(menu,toggle), false);
+ 
   btnComunidad.addEventListener("click",() => showTabs("Comunidades", divTabs),
     false );
 
