@@ -72,17 +72,17 @@ export const canal = (uid) => {
               <img src="Imagenes/profile-image.svg" class="photoUserChannel" id="photoProfileChannel-${doc.id}">
             </div>
             <div id=divInfo>
-            <div class="d-flex w-100 justify-content-between">
-              <div id=divName>
-              <h5 class="mb-1 " id="nameProfileChannel-${doc.id}"></h5>
-              <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
+              <div class="d-flex w-100 justify-content-between">
+                <div id=divName>
+                 <h5 class="mb-1 " id="nameProfileChannel-${doc.id}"></h5>
+                  <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
+                </div>
               </div>
-            </div>
-            <p class="mb-4">${doc.data().mensaje}</p>
-            <div class="d-flex justify-content-around">
-              ${doc.data().meGusta.includes(emailUSer) ? likeColorBlue : likeColorBlack}
-              <button class="btn btn-small-font btn-respoder" ><i class="fas fa-comment-alt"></i> Responder</div></button>
-            </div>
+              <p class="mb-4">${doc.data().mensaje}</p>
+              <div class="d-flex justify-content-around">
+                ${doc.data().meGusta.includes(emailUSer) ? likeColorBlue : likeColorBlack}
+                <button class="btn btn-small-font btn-respoder" ><i class="fas fa-comment-alt"></i> Responder</div></button>
+              </div>
             </div>
           </div>
                
@@ -134,7 +134,7 @@ export const canal = (uid) => {
         });
         displayChannel(uid);
 
-        // document.getElementById("CardBody").scrollTo(0, document.getElementById("cardCanal").scrollHeight)
+        // document.getElementById("CardBody").scrollTo(document.getElementById("cardCanal").scrollHeight, 0)
       });
     }
     postWall(uid)
