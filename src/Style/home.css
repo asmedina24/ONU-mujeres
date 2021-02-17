@@ -40,11 +40,7 @@
     .carousel{
         position: inherit;
     }
-    .carousel-item active {
-    }
     
-    .carousel.pointer-event{
-    }
     .carousel slide{
         margin: 10px;
     }
@@ -73,9 +69,16 @@
         justify-content: center;
     }
 
-    a.gflag{
+    a.gflag img{
         margin: 4px;
+        width: 20px;
+        font-size: 44px;
     }
+
+    a.gflag.nturl {
+        padding: 5px;
+    }
+    
 
 }
 
