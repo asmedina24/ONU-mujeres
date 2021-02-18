@@ -12,7 +12,7 @@ export const chatMasivo = () => {
       
          </header>
       
-        <div class="card canal">
+        <div class="card canal" id="cardCanalMasivo">
         <div class="card-body">
            <div id="contenidoprotegidoChatMasivo"></div>
              

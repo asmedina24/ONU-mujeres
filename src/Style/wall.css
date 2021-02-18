@@ -374,6 +374,20 @@ padding-left: 10px;
     min-height: 1px;
     padding: 0;
 }
+
+
+.izq-nombre{
+    display: flex;
+    justify-content: space-between;
+}
+.izq-nombre p {
+    font-weight: bold;
+}
+
+.izquierda-chat{
+    display: flex;
+    flex-direction: column;
+}
 }
 
 

@@ -93,8 +93,15 @@
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
-    height: 450px;
+    height: 481px; 
 }
 
+#cardCanalMasivo{
+    height: 420px;
+}
+
+#divCardChatUnit{
+    height: 479px;
+}
 
 }

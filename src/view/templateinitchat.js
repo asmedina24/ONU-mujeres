@@ -29,7 +29,7 @@ export const initchat = (email) => {
                                     
                                       </header>
                                     
-                                      <div class="card canal">
+                                      <div class="card canal" id="divCardChatUnit">
                                         <div class="card-body" id="bodyInitChat">
                                           <div id="contenidoprotegidoChat"></div>
                                           
