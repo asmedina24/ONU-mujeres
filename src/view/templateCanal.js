@@ -17,7 +17,7 @@ export const canal = (uid) => {
     <header class="d-flex justify-content align-items-center" id="headerName">
       <!-- Nuestro botón. para volver y crear -->
       <a href="#/wall" class="btn " >  <i class="fa fa-chevron-left text-white"></i>  </a>
-      <div id="header-title">
+      <div id="headertitleCanal">
         <p class="tituloCanal" id='nombreCanal'></p>
         <p class="tituloCanal" id='miembros'>17 miembros</p>
       </div>
@@ -57,7 +57,7 @@ export const canal = (uid) => {
     const postWall = (uid) => {
       firebase.firestore()
       .collection(`comunidades/${uid}/mensaje`)
-      .orderBy('fecha', 'asc')
+      .orderBy('fecha', 'desc')
       .get()
       .then((query) => {
         bodyCanal.innerHTML = "";
@@ -134,7 +134,7 @@ export const canal = (uid) => {
         });
         displayChannel(uid);
 
-        document.getElementById("CardBody").scrollTo(0, document.getElementById("cardCanal").scrollHeight)
+        // document.getElementById("CardBody").scrollTo(0, document.getElementById("cardCanal").scrollHeight)
       });
     }
     postWall(uid)

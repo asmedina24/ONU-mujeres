@@ -11,8 +11,16 @@
 
 #header-title{
     width: 60%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    white-space: break-spaces;
 }
 
+.headertitleCanal{
+    color: white;
+    font-size: 15px
+}
 #spanDelete {
     width: 27%;
     display: flex;

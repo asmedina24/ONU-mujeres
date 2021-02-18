@@ -64,10 +64,8 @@ const chat = {
 
         }
 
-        
       });
     });
-
 
   },
 
@@ -153,7 +151,6 @@ const chat = {
     firebase.firestore().collection('chat').onSnapshot((query) => {
       bodyCanal.innerHTML = "";
       query.forEach((doc) => {
-        // console.log(doc.data());
         bodyCanal.innerHTML += `
         <div class="list-group-item  ">
           <div class="d-flex w-100 justify-content-between">
@@ -229,7 +226,6 @@ const chat = {
     .onSnapshot((query) => {
                 contenidoprotegidoChatMasivo.innerHTML = "";
                 query.forEach(doc => {
-                  // console.log(doc.id);
                     contenidoprotegidoChatMasivo.innerHTML +=
                       ` <div class="derecha" >
                   <span class=""> ${doc.data().mensaje}</span>
@@ -239,7 +235,7 @@ const chat = {
                   `;
   
                 })
-            });
+                });
               }
 
 };
