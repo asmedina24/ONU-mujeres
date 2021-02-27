@@ -60,9 +60,9 @@
         top: 498px;
     }
     .transtale{
-      display: flex;
-      justify-content: center;
-      margin: 47px 2px 10px -24px;
+        display: flex;
+        justify-content: center;
+        margin: 8px 0px -23px 0px;
     }
     .selectTranslate{
         display: flex;
@@ -70,7 +70,7 @@
     }
 
     a.gflag{
-        margin: 4px;
+        margin: 7px;
     }
 
 }
