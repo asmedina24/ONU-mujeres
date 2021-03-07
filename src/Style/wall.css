@@ -240,7 +240,7 @@ padding-left: 10px;
 }
 .canal .card-body {  
     overflow-y: scroll;
-    height: 80vh;
+    height: 72vh;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     min-height: 1px;
@@ -334,7 +334,7 @@ padding-left: 10px;
  .hr-close{
     background: white;
     width: 93%;
-    margin-top: 350px
+    margin-top: 220px;
  }
 
  .img-menu{
@@ -360,9 +360,33 @@ padding-left: 10px;
  .btn-respoder{
     padding-right: 0;
  }
+ 
  .fa-bullseye:before {
     content: "\f140";
     color: aqua;
+}
+
+#bodyInitChat{
+    overflow-y: scroll;
+    height: 68vh;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0;
+}
+
+
+.izq-nombre{
+    display: flex;
+    justify-content: space-between;
+}
+.izq-nombre p {
+    font-weight: bold;
+}
+
+.izquierda-chat{
+    display: flex;
+    flex-direction: column;
 }
 }
 

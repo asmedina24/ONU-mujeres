@@ -29,22 +29,25 @@ export const initchat = (email) => {
                                     
                                       </header>
                                     
-                                      <div class="card canal">
-                                      <div class="card-body">
-                                        <div id="contenidoprotegidoChat"></div>
+                                      <div class="card canal" id="divCardChatUnit">
+                                        <div class="card-body" id="bodyInitChat">
+                                          <div id="contenidoprotegidoChat"></div>
                                           
-                                            </div>
-                                            </div>
-                                            <form id="formulario">
-                                            <div class="row">
-                                                <div class="col-9">
-                                                  <input type="text" placeholder="Enviar mensaje" class="form-control" id="answerChat">
-                                                </div>
-                                                <div class="col-3">
-                                                  <button id="btnformulario" class="btn-clip" type="submit"><i class="fa fa-paperclip aria-hidden="true"" ></i></i><i class="fas fa-play"></i></button>
-                                                </div>
-                                            </div>
-                                            </form>
+                                        </div>
+                                        <div class="card-footer footerCanal">
+                                        <form id="formulario">
+                                          <div class="row">
+                                              <div class="col-9">
+                                                <input type="text" placeholder="Enviar mensaje" class="form-control" id="answerChat">
+                                              </div>
+                                              <div class="col-3">
+                                                <button id="btnformulario" class="btn-clip" type="submit"><i class="fa fa-paperclip aria-hidden="true"" ></i></i><i class="fas fa-play"></i></button>
+                                              </div>
+                                          </div>
+                                        </form>
+                                      </div>
+
+                                      </div>
                                     
                                             `;
                                             divChatUnit.innerHTML = viewChatUnit;
