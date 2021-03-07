@@ -31,14 +31,15 @@ export const crearComunidades = () => {
 
 </form>
    </div>
-      `; //   <button type="submit" class="btn btn-primary" id="btn">crear</button>
+      `; 
   divCreateComunity.innerHTML = viewCreateComunity;
   const formulario = divCreateComunity.querySelector("#formularioCrear");
   const nombre = divCreateComunity.querySelector("#nombre");
   const descripcion = divCreateComunity.querySelector("#descripcion");
   const estado = divCreateComunity.querySelector("#estado");
   const btnCrear = divCreateComunity.querySelector("#btnCrear");
-//le damos la funcionalidad al boton crear
+
+  //le damos la funcionalidad al boton crear
   btnCrear.addEventListener(
     "click",
     () => {

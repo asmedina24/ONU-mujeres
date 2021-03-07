@@ -10,6 +10,7 @@ const init = () => {
       // console.log('en onhashchange', window.location.hash);
       document.getElementById('root').innerHTML = '';
       changeroute(window.location.hash);
+    
     };
   }
 };

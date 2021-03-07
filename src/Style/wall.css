@@ -222,6 +222,16 @@ padding-left: 10px;
     align-items: center;
 
 }
+.principales{  
+    color: white;
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+    list-style: none;
+    opacity: 80%;
+ 
+
+}
 #contenidoprotegido{
     /* height: 40vh; */
     margin-top: 3px;
@@ -264,19 +274,16 @@ padding-left: 10px;
  }
 
   .dropdown-menu.show {
-    display: block;
-    top: 65px !important;
+    /* display: block; */
+    top: 93px !important;
     left: 1px !important;
     will-change: transform;
     bottom: -165px;
-    width: 315px;
-    height: 145px;
-    margin-top: 72px;
+    width: 320px;
+    height: 112px;
   }
   
-  .dropdown-menu{
-      margin-top: 200px;
-  }
+    
 
   .fa-paperclip {
     padding: 4px;
@@ -292,7 +299,71 @@ padding-left: 10px;
     opacity: 70%;
   }
  
+  .fa-user{
+    width: 8%;
+  }
 
+  #opcionAdministrador{
+      padding: 0%;
+  }
+
+ .d-flex{
+    align-items: center;
+ }
+ .imgChat{
+    width: 40px;
+    border-radius: 60%;
+ }
+ .div-img-chat{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+ }
+ .name-chat{
+    position: absolute;
+    margin-left: 164px;
+ }
+
+ .hr{
+    background: white;
+    width: 93%;
+ }
+
+ .hr-close{
+    background: white;
+    width: 93%;
+    margin-top: 350px
+ }
+
+ .img-menu{
+    width: 50px;
+    height: 50px;
+    border-radius: 150px;
+    margin-left: 8%;
+    margin-top: 4%;
+ }
+ .imgg{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    margin-top: 5px;
+    padding: 12px;
+ }
+
+ 
+
+ .btn-respoder{
+    padding-right: 0;
+ }
+ .fa-bullseye:before {
+    content: "\f140";
+    color: aqua;
+}
 }
 
 

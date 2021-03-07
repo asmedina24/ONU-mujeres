@@ -5,6 +5,20 @@
     border-radius: 150px;
 }
 
+#headerName{
+    position: relative;
+}
+
+#header-title{
+    width: 60%;
+}
+
+#spanDelete {
+    width: 27%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5px;
+}
 #headerPost{
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -12,10 +26,18 @@
 #divName{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-right: 2%;
 }
 
-#headerPost p {
-    /* padding-left: 61px */
+
+#delete {
+    position: absolute;
+    color: white;
+    position: relative;
+    display: flex;
+    margin-right: 0px;
 }
 
 .btn-small-font{
@@ -35,5 +57,19 @@
     margin: 0;
     font-size: 12px;
 }
+
+.likeCanal{
+    padding-left: 0 !important;
+}
+
+#divSubmit{
+    display: flex;
+}
+
+#clip {
+    padding: 11px 0px;
+}
+
+
 
 }
