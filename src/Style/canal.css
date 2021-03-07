@@ -11,8 +11,16 @@
 
 #header-title{
     width: 60%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    white-space: break-spaces;
 }
 
+.headertitleCanal{
+    color: white;
+    font-size: 15px
+}
 #spanDelete {
     width: 27%;
     display: flex;
@@ -69,7 +77,31 @@
 #clip {
     padding: 11px 0px;
 }
+.footerCanal{
+    height: 59px;
+}    
 
+#cardCanal{
+    position: relative;
+    /* display: -ms-flexbox; */
+    display: flex;
+    /* -ms-flex-direction: column; */
+    flex-direction: column;
+    min-width: 0;
+    /* word-wrap: break-word; */
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    height: 481px; 
+}
 
+#cardCanalMasivo{
+    height: 420px;
+}
+
+#divCardChatUnit{
+    height: 479px;
+}
 
 }

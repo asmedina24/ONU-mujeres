@@ -35,9 +35,7 @@ export const Comunidades = () => {
 };
 export const menu =()=>{
   firebase.auth().onAuthStateChanged((user) => {
-    console.log(user)
     const uid = user.email; 
-      console.log(uid)
       firebase.firestore().collection('perfil').where('email', '==', uid).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           const containerRoot = document.getElementById('root2');
