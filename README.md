@@ -74,7 +74,7 @@ Este sitio web “Tu Oportunidad” fue implementado utilizando las tecnologías
  
 ## PROTOTIPO DE ALTA FIDELIDAD
 
-[link a figma]_(https://www.figma.com/file/8l67r2mMZ9Ky9vF5sqXqjw/Prototipo-ONU--(Material-Baseline-Design-Kit)?node-id=0%3A2347)
+[link a figma]_(https://www.figma.com/file/8l67r2mMZ9Ky9vF5sqXqjw/Prototipo-ONU--(Material-Baseline-Design-Kit)?node-id=6%3A29)
 
 
 
