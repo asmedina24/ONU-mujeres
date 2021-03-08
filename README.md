@@ -38,7 +38,7 @@ Esta plataforma abre todos los canales de comunicacion, permitiendo a las usuari
 ![inicio](https://github.com/asmedina24/ONU-mujeres/blob/main/src/imgREADME/app3.png)
 
 
-la paltaforma permite logearse, crear y editar un perfil de usuaria y/o Administradora, donde se puede agregar foto, datos personales, datos de interés como usuario de instagram y facebook.
+La plataforma permite logearse, crear y editar un perfil de usuaria y/o Administradora, donde se puede agregar foto, datos personales, datos de interés como usuario de instagram y facebook.
 
 
 ![login](https://github.com/asmedina24/ONU-mujeres/blob/main/src/imgREADME/app5.png)
@@ -74,7 +74,7 @@ Este sitio web “Tu Oportunidad” fue implementado utilizando las tecnologías
  
 ## PROTOTIPO DE ALTA FIDELIDAD
 
-[link a figma]_(https://www.figma.com/file/8l67r2mMZ9Ky9vF5sqXqjw/Prototipo-ONU--(Material-Baseline-Design-Kit)?node-id=6%3A29)
+[link a figma](https://www.figma.com/file/8l67r2mMZ9Ky9vF5sqXqjw/Prototipo-ONU--(Material-Baseline-Design-Kit)?node-id=6%3A29)
 
 
 
