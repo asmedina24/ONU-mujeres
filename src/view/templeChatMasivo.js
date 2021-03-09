@@ -12,12 +12,13 @@ export const chatMasivo = () => {
       
          </header>
       
-        <div class="card canal">
+        <div class="card canal" id="cardCanalMasivo">
         <div class="card-body">
            <div id="contenidoprotegidoChatMasivo"></div>
              
               </div>
               </div>
+              <div class="card-footer footerCanal">
                <form id="formulario">
                <div class="row">
                   <div class="col-9">
@@ -28,7 +29,7 @@ export const chatMasivo = () => {
                   </div>
                </div>
               </form>
-      
+              </div>
                `;
       
       

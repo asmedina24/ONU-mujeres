@@ -48,6 +48,7 @@ const chat = {
           console.log('entro al if de mostrar');
           contenidoprotegidoChat.innerHTML +=
             ` <div class="derecha" >
+        <p>Javiera Administadora </p>
         <span class=""> ${doc.data().mensaje}</span>
         <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
         
@@ -55,11 +56,13 @@ const chat = {
         `;
 
         } else {
-          contenidoprotegidoChat.innerHTML += ` <div class="izquierda">
-        <span class=""> ${doc.data().mensaje}</span>
-        
-        <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
-       
+          contenidoprotegidoChat.innerHTML += ` 
+          <div class="izquierda-chat">
+          <div class="izq-nombre"> 
+          <p>Javiera Administadora </p>
+          <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
+          </div>
+          <span class=""> ${doc.data().mensaje}</span>
           </div>`;
 
         }
@@ -229,8 +232,6 @@ const chat = {
                     contenidoprotegidoChatMasivo.innerHTML +=
                       ` <div class="derecha" >
                   <span class=""> ${doc.data().mensaje}</span>
-                  <small>${moment(doc.data().fecha, "DD/MM/YYYY h:mm:ss").fromNow(true)}</small>
-                  
                   </div>
                   `;
   
