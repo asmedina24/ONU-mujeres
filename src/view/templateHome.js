@@ -9,16 +9,15 @@ export const home = () => {
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/slider1.jpg" alt="First slide">
-            <div id="logIn1">
+            <center>
+            <div>
               <ul>
                <a href="#/logIn">SALTAR</a>
               </ul> 
             </div>
-            <div id="logIn2">
-              <ul>
-               <a href="#/log">CONTINUAR</a>
-              </ul>
-            </div>
+            </center>
+            
+           
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/slider2.jpg" alt="Second slide">

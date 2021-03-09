@@ -33,9 +33,11 @@
     .carousel-indicators li{
         background-color: #4D8FC2;
     }    
-    .carousel-inner{
-        width: 213px;
-        height: 365px;
+    .carousel-inner {
+        position: relative;
+        width: 100%;
+        height: auto;
+        
     }
     .carousel{
         position: inherit;
