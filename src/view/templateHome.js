@@ -3,12 +3,12 @@ export const home = () => {
   const viewHome = `  
 
   <div class="header-home">
-        <img src="../Imagenes/Tu-oportunidad-logo.png" class="logoHome"  alt="Logo">
+        <img src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/Tu-oportunidad-logo.png" class="logoHome"  alt="Logo">
   </div>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="../Imagenes/slider1.jpg" alt="First slide">
+            <img class="d-block w-100" src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/slider1.jpg" alt="First slide">
             <div id="logIn1">
               <ul>
                <a href="#/logIn">SALTAR</a>
@@ -21,13 +21,13 @@ export const home = () => {
             </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="../Imagenes/slider2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/slider2.jpg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="../Imagenes/slider3.jpg" alt="Third slide">
+            <img class="d-block w-100" src="https://github.com/asmedina24/ONU-mujeres/blob/main/src/Imagenes/slider3.jpg?raw=true" alt="Third slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="../Imagenes/slider4.jpg" alt="Third slide">
+            <img class="d-block w-100" src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/slider4.jpg" alt="Third slide">
             <a href="#/logIn" class="btn btn-primary btn-lg active" id="btnStart" role="button" aria-pressed="true">COMENZAR</a>
           </div>
         </div>

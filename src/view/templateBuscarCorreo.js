@@ -11,13 +11,9 @@ export const buscarCorreo = () => {
    <div class="form-outline">
    <input type="search" placeholder=" Buscar" id='search'/>
      <label><i class="fas fa-search"></i></label>
-     
-
-   </div>
+     </div>
  </div>
-     
-  
-        <div id="buscarCorreo"></div>                          
+             <div id="buscarCorreo"></div>                          
        
          `;
   divbuscarCorreo.innerHTML = viewbuscarCorreo;

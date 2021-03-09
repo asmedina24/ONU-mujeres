@@ -34,11 +34,11 @@ const login = {
     let b=document.querySelector("#eye");
     if (a.type=="password")  {
     a.type="text";
-    b.src="../Imagenes/eye-open.png";
+    b.src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/eye-open.png";
     }
     else {
     a.type="password";
-    b.src="../Imagenes/eye-close.png";
+    b.src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/eye-close.png";
     } 
   },
   cerrarSesion: () => {

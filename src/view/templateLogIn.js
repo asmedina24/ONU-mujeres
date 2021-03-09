@@ -6,13 +6,13 @@ export const logIn = () => {
      <div id="pagLogin" class="div-login">
         <div class="header-login"> 
             <button id="flechaVolver">
-              <img src="../Imagenes/flecha.png" id="imgFlecha" alt="Logo">
+              <img src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/flecha.png" id="imgFlecha" alt="Logo">
             </button>
             <p class="header-login-p"> Iniciar Sesión </p> 
           
         </div>
         <div class = "body-login">
-          <img src="../Imagenes/Tu-oportunidad-logo.png" id="logoLogin" alt="Logo"> 
+          <img src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/Tu-oportunidad-logo.png" id="logoLogin" alt="Logo"> 
           <form action="" id= "formLogin">
                 <div class="label-login">
                   <label for="mailLogin" class="label-form">Email</label> 
@@ -22,7 +22,7 @@ export const logIn = () => {
                   <label for="pwd" class="label-form2">Contraseña</label>
                   <input type="password" id="pwd" class="masked2" name="password">
                   <button type="button" id="btnEye">
-                      <img src="../Imagenes/eye-close.png" id="eye" alt="eye">
+                      <img src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/eye-close.png" id="eye" alt="eye">
                   </button>
                 </div>
           </form>
@@ -31,14 +31,14 @@ export const logIn = () => {
         </div>
         <div class="footer-login">
             <button type="button" id="btnLogin">
-                <img src="../Imagenes/btnLogin.png" id="imgLogin" alt="eye">
+                <img src="https://raw.githubusercontent.com/asmedina24/ONU-mujeres/main/src/Imagenes/btnLogin.png" id="imgLogin" alt="eye">
             </button>
             <p class="footer-login-p">Al continuar acepta términos y condiciones </p>
         </div>
      </div>
       `;
     divHome.innerHTML = viewHome;
-        let btnEye = divHome.querySelector("#btnEye");https://medium.com/@martin.sikora/node-js-websocket-simple-chat-tutorial-2def3a841b61
+        let btnEye = divHome.querySelector("#btnEye");
 
 
             btnEye.addEventListener("click", ()=>{
